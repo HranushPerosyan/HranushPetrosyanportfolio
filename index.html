@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#222321">
-
   <title>Hranush Petrosyan | Web Designer & Web Developer</title>
-  <meta name="description" content="Portfolio of Hranush Petrosyan, Web Designer and Web Developer specializing in Shopify, responsive websites, front-end development, and back-end integrations.">
+  <meta name="description" content="Portfolio of Hranush Petrosyan, specializing in web design, Shopify development, Liquid, JavaScript, Node.js and integrations.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,3 +339,1299 @@
 
     .skills-strip-inner {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 22px 30px;
+    }
+
+    .skills-strip-label {
+      color: var(--bronze-light);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .skill-item {
+      color: #d1cdc4;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--ivory);
+      color: var(--charcoal);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .about-visual {
+      position: relative;
+      max-width: 410px;
+      width: 100%;
+      padding: 0 0 15px 15px;
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      inset: -15px 15px 30px -15px;
+      border: 1px solid var(--bronze);
+      pointer-events: none;
+    }
+
+    .about-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center 35%;
+      background: var(--ivory-dark);
+      filter: saturate(0.86);
+    }
+
+    .about .section-label {
+      color: #8c663d;
+    }
+
+    .about .section-label::before {
+      background: #8c663d;
+    }
+
+    .about .section-title span {
+      color: #936d43;
+    }
+
+    .about-text {
+      color: #64625c;
+      font-size: 14px;
+      line-height: 2;
+      margin-top: 23px;
+    }
+
+    .about-text + .about-text {
+      margin-top: 14px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .about-highlight {
+      padding: 17px 18px;
+      border: 1px solid rgba(34, 35, 33, 0.13);
+    }
+
+    .about-highlight strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .about-highlight span {
+      color: #77736b;
+      font-size: 11px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--charcoal);
+    }
+
+    .services-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 52px;
+    }
+
+    .services-heading .section-description {
+      max-width: 380px;
+      margin-top: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 245px;
+      padding: 30px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: rgba(177, 138, 91, 0.055);
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 26px;
+      color: var(--bronze-light);
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 13px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .service-arrow {
+      position: absolute;
+      top: 29px;
+      right: 28px;
+      color: var(--bronze);
+      font-size: 18px;
+    }
+
+    /* TECHNOLOGY TOOLKIT */
+
+    .toolkit {
+      background: var(--charcoal-light);
+    }
+
+    .toolkit-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .toolkit-groups {
+      display: grid;
+      gap: 25px;
+    }
+
+    .toolkit-group {
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(245, 241, 232, 0.12);
+    }
+
+    .toolkit-group:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .toolkit-group h3 {
+      margin-bottom: 15px;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tool-tag {
+      padding: 9px 13px;
+      border: 1px solid rgba(245, 241, 232, 0.16);
+      color: #d7d1c6;
+      font-size: 11px;
+    }
+
+    .tool-tag.featured {
+      border-color: rgba(177, 138, 91, 0.6);
+      color: var(--bronze-light);
+    }
+
+    /* FEATURED PROJECT */
+
+    .projects {
+      background: var(--ivory);
+      color: var(--charcoal);
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 48px;
+      border: 1px solid rgba(34, 35, 33, 0.14);
+    }
+
+    .project-preview {
+      position: relative;
+      min-height: 440px;
+      padding: 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #e8e0d2;
+    }
+
+    .preview-browser {
+      background: #f8f5ee;
+      border: 1px solid rgba(34, 35, 33, 0.13);
+      box-shadow: 0 18px 45px rgba(34, 35, 33, 0.12);
+    }
+
+    .preview-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(34, 35, 33, 0.1);
+    }
+
+    .preview-browser-bar span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #b6afa1;
+    }
+
+    .preview-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 17px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #292923;
+    }
+
+    .preview-brand small {
+      font-family: var(--font-body);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .preview-hero {
+      padding: 26px 20px 24px;
+      background: #d5c6ae;
+      color: #292923;
+    }
+
+    .preview-hero small {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .preview-hero h3 {
+      max-width: 270px;
+      font-family: var(--font-heading);
+      font-size: clamp(27px, 3vw, 39px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+
+    .preview-hero p {
+      margin-top: 12px;
+      max-width: 230px;
+      font-size: 9px;
+      line-height: 1.8;
+    }
+
+    .preview-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      padding: 14px;
+    }
+
+    .preview-product {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e6dfd2;
+    }
+
+    .mini-suitcase {
+      position: relative;
+      width: 34px;
+      height: 49px;
+      border: 2px solid #7b7569;
+      border-radius: 5px;
+      background: #a49b8b;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.12);
+    }
+
+    .mini-suitcase::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 7px;
+      border: 2px solid #7b7569;
+      border-bottom: 0;
+      border-radius: 4px 4px 0 0;
+      top: -9px;
+      left: 9px;
+    }
+
+    .mini-suitcase::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 14px;
+      background: #7b7569;
+      right: 5px;
+      top: 15px;
+    }
+
+    .mini-suitcase.dark {
+      background: #454640;
+      border-color: #454640;
+    }
+
+    .mini-suitcase.light {
+      background: #d1c4ad;
+    }
+
+    .project-preview-caption {
+      color: #645b4e;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-info {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .project-label {
+      color: #8c663d;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .project-info h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(35px, 4vw, 49px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .project-info > p {
+      margin-top: 20px;
+      color: #69665f;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .project-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 23px;
+      margin-bottom: 30px;
+    }
+
+    .project-features span {
+      padding: 7px 10px;
+      border: 1px solid rgba(34, 35, 33, 0.15);
+      font-size: 10px;
+      color: #55524b;
+    }
+
+    .project-button {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border: 1px solid var(--charcoal);
+    }
+
+    .project-button:hover {
+      background: #41413a;
+      border-color: #41413a;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      right: -180px;
+      bottom: -250px;
+      border: 1px solid rgba(177, 138, 91, 0.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(177, 138, 91, 0.035), 0 0 0 90px rgba(177, 138, 91, 0.025);
+      pointer-events: none;
+    }
+
+    .contact-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .contact-description {
+      max-width: 480px;
+      margin-top: 23px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 21px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.25s ease;
+    }
+
+    .contact-link:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-link:hover {
+      color: var(--bronze-light);
+    }
+
+    .contact-link small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .contact-link strong {
+      font-size: 13px;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link-arrow {
+      color: var(--bronze-light);
+      font-size: 19px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 26px 0;
+      border-top: 1px solid rgba(245, 241, 232, 0.1);
+      background: #1c1d1b;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #8e8b83;
+      font-size: 11px;
+    }
+
+    .footer-name {
+      color: var(--bronze-light);
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .back-to-top {
+      color: #c6c1b7;
+      font-size: 11px;
+      transition: color 0.25s ease;
+    }
+
+    .back-to-top:hover {
+      color: var(--bronze-light);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px, 6vw, 68px);
+      }
+
+      .about-grid {
+        gap: 55px;
+      }
+
+      .toolkit-layout,
+      .contact-layout {
+        gap: 50px;
+      }
+
+      .project-info {
+        padding: 35px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 36px, var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-contact {
+        padding: 9px 13px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 68px 0 75px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 52px;
+      }
+
+      .hero h1 {
+        max-width: 570px;
+        font-size: clamp(46px, 10vw, 68px);
+        letter-spacing: -2.8px;
+      }
+
+      .hero-visual {
+        justify-self: center;
+        width: min(100%, 400px);
+        margin-right: 10px;
+      }
+
+      .hero-photo {
+        height: 440px;
+      }
+
+      .skills-strip-inner {
+        justify-content: flex-start;
+        gap: 16px 24px;
+      }
+
+      .skills-strip-label {
+        width: 100%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .about-visual {
+        width: min(100%, 400px);
+        justify-self: center;
+      }
+
+      .about-photo {
+        height: 440px;
+      }
+
+      .services-heading {
+        display: block;
+      }
+
+      .services-heading .section-description {
+        margin-top: 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-card {
+        min-height: 235px;
+        padding: 23px;
+      }
+
+      .toolkit-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-preview {
+        min-height: 390px;
+        padding: 23px;
+      }
+
+      .project-info {
+        padding: 34px 25px;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .nav-contact {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2.6px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .hero-description,
+      .about-text,
+      .contact-description {
+        font-size: 13px;
+      }
+
+      .hero-photo {
+        height: 370px;
+      }
+
+      .about-photo {
+        height: 380px;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 200px;
+      }
+
+      .service-number {
+        margin-bottom: 18px;
+      }
+
+      .project-preview {
+        min-height: 340px;
+        padding: 16px;
+      }
+
+      .preview-hero {
+        padding: 22px 15px;
+      }
+
+      .preview-products {
+        padding: 10px;
+        gap: 6px;
+      }
+
+      .preview-product {
+        min-height: 76px;
+      }
+
+      .project-info {
+        padding: 29px 21px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="Hranush Petrosyan home">
+        HRANUSH<span>.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#toolkit">Technologies</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="nav-contact">Let's Talk ↗</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <span class="status-dot"></span>
+            Web Design & Development
+          </div>
+
+          <h1>
+            Building digital
+            <span>experiences</span>
+            with purpose.
+          </h1>
+
+          <p class="hero-subtitle">
+            Hi, I'm Hranush Petrosyan.
+          </p>
+
+          <p class="hero-description">
+            I'm a Web Designer & Web Developer creating thoughtful,
+            responsive websites and Shopify experiences. I combine
+            visual design, front-end development, and back-end
+            integrations to build digital solutions that look polished
+            and work smoothly.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="button button-primary">
+              Explore My Work <span>↗</span>
+            </a>
+            <a href="#contact" class="button button-outline">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            class="hero-photo"
+            src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_12.50.20_cc67c365-068c-4ee9-addd-797c81ba2464.jpg?v=1792581293"
+            alt="Hranush Petrosyan"
+            fetchpriority="high"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS STRIP -->
+    <section class="skills-strip" aria-label="Core skills">
+      <div class="container skills-strip-inner">
+        <span class="skills-strip-label">Core Expertise</span>
+        <span class="skill-item">Web Design</span>
+        <span class="skill-item">Front-End Development</span>
+        <span class="skill-item">Back-End Development</span>
+        <span class="skill-item">Shopify</span>
+        <span class="skill-item">Integrations</span>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+          <img
+            class="about-photo"
+            src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_19.50.50.jpg?v=1792598242"
+            alt="Hranush Petrosyan — About Me"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-content">
+          <div class="section-label">A Little About Me</div>
+
+          <h2 class="section-title">
+            Design meets <span>function.</span>
+          </h2>
+
+          <p class="about-text">
+            I'm Hranush Petrosyan, a Web Designer & Web Developer based
+            in Armenia. I enjoy turning ideas into engaging digital
+            experiences that balance aesthetics, usability, and
+            performance.
+          </p>
+
+          <p class="about-text">
+            My work brings together responsive web design, front-end
+            development, Shopify Liquid customization, and back-end
+            development using JavaScript and Node.js. I also work with
+            Shopify integrations to help websites deliver a more
+            complete and connected experience.
+          </p>
+
+          <p class="about-text">
+            I believe a good website should do more than look beautiful.
+            It should communicate clearly, work across devices, and
+            make the experience simple for the people using it.
+          </p>
+
+          <div class="about-highlights">
+            <div class="about-highlight">
+              <strong>Thoughtful Design</strong>
+              <span>Clean layouts and intuitive experiences</span>
+            </div>
+
+            <div class="about-highlight">
+              <strong>Responsive Development</strong>
+              <span>Experiences built for different screens</span>
+            </div>
+
+            <div class="about-highlight">
+              <strong>Shopify Solutions</strong>
+              <span>Liquid customization and integrations</span>
+            </div>
+
+            <div class="about-highlight">
+              <strong>Technical Approach</strong>
+              <span>Design supported by functional code</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section services" id="services">
+      <div class="container">
+
+        <div class="services-heading">
+          <div>
+            <div class="section-label">What I Do</div>
+            <h2 class="section-title">
+              Services & <span>Expertise</span>
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Combining creative thinking and technical implementation
+            to build websites that are visually consistent, responsive,
+            and practical.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <span class="service-number">01 / DESIGN</span>
+            <span class="service-arrow">↗</span>
+            <h3>Web Design</h3>
+            <p>
+              Clean, modern, and user-focused website layouts that
+              communicate your brand and guide visitors through
+              a clear digital experience.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 / FRONT-END</span>
+            <span class="service-arrow">↗</span>
+            <h3>Front-End Development</h3>
+            <p>
+              Responsive interfaces using HTML, CSS, and JavaScript,
+              with attention to layout, accessibility, and
+              cross-device usability.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 / BACK-END</span>
+            <span class="service-arrow">↗</span>
+            <h3>Back-End Development</h3>
+            <p>
+              Server-side development with Node.js and JavaScript
+              to support application logic, data handling, and
+              integration workflows where required.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04 / SHOPIFY</span>
+            <span class="service-arrow">↗</span>
+            <h3>Shopify Development</h3>
+            <p>
+              Shopify theme customization, Liquid templates,
+              custom sections, and storefront improvements
+              tailored to individual business needs.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05 / INTEGRATIONS</span>
+            <span class="service-arrow">↗</span>
+            <h3>Shopify Integrations</h3>
+            <p>
+              Connecting Shopify storefronts with relevant
+              applications and services to improve store
+              functionality and workflows.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06 / LANDING PAGES</span>
+            <span class="service-arrow">↗</span>
+            <h3>Landing Pages</h3>
+            <p>
+              Focused landing pages with clear messaging,
+              purposeful structure, and responsive layouts
+              designed around specific goals.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY TOOLKIT -->
+    <section class="section toolkit" id="toolkit">
+      <div class="container toolkit-layout">
+
+        <div>
+          <div class="section-label">My Toolkit</div>
+          <h2 class="section-title">
+            The tools behind <span>the work.</span>
+          </h2>
+
+          <p class="section-description">
+            A practical mix of design, storefront development,
+            and programming technologies used to bring web
+            projects to life.
+          </p>
+        </div>
+
+        <div class="toolkit-groups">
+
+          <div class="toolkit-group">
+            <h3>Front-End Development</h3>
+            <div class="tool-tags">
+              <span class="tool-tag featured">HTML</span>
+              <span class="tool-tag featured">CSS</span>
+              <span class="tool-tag featured">JavaScript</span>
+              <span class="tool-tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="toolkit-group">
+            <h3>Shopify Development</h3>
+            <div class="tool-tags">
+              <span class="tool-tag featured">Shopify Liquid</span>
+              <span class="tool-tag featured">Shopify Themes</span>
+              <span class="tool-tag">Custom Sections</span>
+              <span class="tool-tag">Shopify Integrations</span>
+            </div>
+          </div>
+
+          <div class="toolkit-group">
+            <h3>Back-End Development</h3>
+            <div class="tool-tags">
+              <span class="tool-tag featured">Node.js</span>
+              <span class="tool-tag featured">JavaScript</span>
+              <span class="tool-tag">Server-Side Logic</span>
+              <span class="tool-tag">API Integrations</span>
+            </div>
+          </div>
+
+          <div class="toolkit-group">
+            <h3>Design Approach</h3>
+            <div class="tool-tags">
+              <span class="tool-tag">Minimal Design</span>
+              <span class="tool-tag">Visual Hierarchy</span>
+              <span class="tool-tag">User Experience</span>
+              <span class="tool-tag">Mobile-First Layouts</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT: KOFRA -->
+    <section class="section projects" id="projects">
+      <div class="container">
+
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">
+          A project I'm <span>proud of.</span>
+        </h2>
+
+        <p class="section-description">
+          A look at my work combining brand presentation,
+          storefront design, and Shopify customization.
+        </p>
+
+        <article class="project-card">
+
+          <div class="project-preview">
+            <div class="preview-browser">
+
+              <div class="preview-browser-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="preview-brand">
+                KOFRA
+                <small>SHOP / COLLECTION / ABOUT</small>
+              </div>
+
+              <div class="preview-hero">
+                <small>DESIGNED FOR THE JOURNEY</small>
+                <h3>Travel with intention.</h3>
+                <p>Thoughtful essentials for every destination.</p>
+              </div>
+
+              <div class="preview-products">
+                <div class="preview-product">
+                  <div class="mini-suitcase"></div>
+                </div>
+                <div class="preview-product">
+                  <div class="mini-suitcase dark"></div>
+                </div>
+                <div class="preview-product">
+                  <div class="mini-suitcase light"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <p class="project-preview-caption">
+              Shopify storefront concept
+            </p>
+          </div>
+
+          <div class="project-info">
+            <div class="project-label">Featured Project / 01</div>
+            <h3>KOFRA</h3>
+
+            <p>
+              A premium travel-luggage storefront project built
+              around a minimal visual identity and a refined
+              shopping experience. The project brings together
+              Shopify customization, Liquid sections, responsive
+              layouts, and attention to the details that make a
+              storefront feel cohesive.
+            </p>
+
+            <div class="project-features">
+              <span>Shopify</span>
+              <span>Liquid</span>
+              <span>Responsive Design</span>
+              <span>Custom Sections</span>
+              <span>Storefront UX</span>
+            </div>
+
+            <a
+              class="button project-button"
+              href="https://hranush-petrosyan-d6ijjswg.myshopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit KOFRA Store <span>↗</span>
+            </a>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact" id="contact">
+      <div class="container contact-layout">
+
+        <div>
+          <div class="section-label">Get in Touch</div>
+
+          <h2 class="section-title">
+            Let's create something <span>meaningful.</span>
+          </h2>
+
+          <p class="contact-description">
+            Have a website idea, a Shopify project, or an opportunity
+            to collaborate? I'd be happy to hear from you. Let's
+            discuss how we can turn your ideas into a functional
+            and thoughtful digital experience.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="mailto:hrpetrosyan19@gmail.com"
+              class="button button-primary"
+            >
+              Send Me an Email ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-links">
+
+          <a class="contact-link" href="mailto:hrpetrosyan19@gmail.com">
+            <span>
+              <small>Email</small>
+              <strong>hrpetrosyan19@gmail.com</strong>
+            </span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+
+          <a class="contact-link" href="tel:+37477198985">
+            <span>
+              <small>Phone</small>
+              <strong>+374 77 198985</strong>
+            </span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://wa.me/37477198985"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>WhatsApp</small>
+              <strong>Let's connect on WhatsApp</strong>
+            </span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>LinkedIn</small>
+              <strong>Connect professionally</strong>
+            </span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <span class="footer-name">HRANUSH PETROSYAN</span>
+
+      <p class="footer-copy">
+        © <span id="current-year">2026</span>
+        Hranush Petrosyan. All rights reserved.
+      </p>
+
+      <a href="#home" class="back-to-top">Back to top ↑</a>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
