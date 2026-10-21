@@ -4,33 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f5f2">
 
-  <title>Hranush Petrosyan | Web Designer & Front-End Developer</title>
+  <meta
+    name="description"
+    content="Hranush Petrosyan — Web Designer and Web Developer specializing in responsive websites, JavaScript, Node.js, and Shopify customization."
+  >
 
-  <meta name="description" content="Portfolio of Hranush Petrosyan, Web Designer and Front-End Developer based in Armenia. Explore web design, HTML, CSS and Shopify projects.">
+  <title>Hranush Petrosyan | Web Designer & Web Developer</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    /* 1. GLOBAL STYLES */
+    /* =========================================
+       DESIGN SYSTEM
+       Charcoal / Warm Ivory / Bronze
+    ========================================= */
+
     :root {
-      --background: #f8f5f2;
+      --background: #f4f1eb;
       --surface: #ffffff;
-      --lavender: #e8e1f4;
-      --peach: #f5e2d7;
-      --mint: #e0eee7;
-      --pink: #f2e3e8;
-      --text: #292633;
-      --muted: #77727e;
-      --accent: #8068a5;
-      --border: #e8e2e7;
-      --radius: 24px;
-      --shadow: 0 15px 45px rgba(48, 39, 59, 0.07);
-      --max-width: 1160px;
+      --dark: #222321;
+      --dark-soft: #30312e;
+      --text: #292a27;
+      --muted: #77766f;
+      --accent: #a78358;
+      --accent-light: #d4c0a5;
+      --border: #ded9d0;
+      --white: #ffffff;
+
+      --radius: 4px;
+      --shadow: 0 18px 50px rgba(28, 27, 24, 0.09);
+      --transition: 0.3s ease;
     }
 
     * {
@@ -45,29 +55,11 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
       background: var(--background);
       color: var(--text);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3, .brand {
-      font-family: "Manrope", sans-serif;
-      line-height: 1.2;
-      letter-spacing: -0.04em;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    p {
-      color: var(--muted);
+      overflow-x: hidden;
     }
 
     a {
@@ -81,106 +73,98 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 48px));
-      margin-inline: auto;
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
     }
 
     .section {
-      padding: 100px 0;
+      padding: 110px 0;
     }
 
-    .section-heading {
-      max-width: 650px;
-      margin-bottom: 42px;
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.15;
+      letter-spacing: -1.2px;
     }
 
-    .section-heading p {
-      margin-top: 15px;
-      max-width: 550px;
+    h2 {
+      margin-top: 18px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.17em;
-    }
-
-    .button {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 50px;
-      padding: 13px 23px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      background: var(--text);
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      gap: 12px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
     }
 
-    .button:hover {
-      transform: translateY(-3px);
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 1px;
       background: var(--accent);
-      box-shadow: 0 10px 25px rgba(128, 104, 165, 0.2);
     }
 
-    .button-light {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border);
+    .section-intro {
+      max-width: 590px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .button-light:hover {
-      color: #fff;
-      border-color: var(--accent);
-    }
+    /* =========================================
+       HEADER
+    ========================================= */
 
-    /* 2. NAVIGATION */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(248, 245, 242, 0.94);
-      border-bottom: 1px solid rgba(232, 226, 231, 0.8);
+      z-index: 100;
+      background: rgba(244, 241, 235, 0.95);
+      border-bottom: 1px solid rgba(34, 35, 33, 0.09);
       backdrop-filter: blur(14px);
     }
 
-    .navigation {
+    .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 78px;
-      gap: 24px;
+      gap: 28px;
     }
 
-    .brand {
-      font-size: 1.1rem;
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
       font-weight: 800;
+      letter-spacing: -0.6px;
       white-space: nowrap;
     }
 
-    .brand span {
+    .logo span {
       color: var(--accent);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 27px;
-      list-style: none;
+      gap: 30px;
     }
 
     .nav-links a {
-      color: var(--muted);
-      font-size: 0.88rem;
-      transition: color 0.2s ease;
+      color: #57564f;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color var(--transition);
     }
 
     .nav-links a:hover {
@@ -188,568 +172,950 @@
     }
 
     .nav-contact {
-      padding: 10px 18px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text) !important;
+      padding: 11px 19px;
+      border: 1px solid var(--dark);
+      color: var(--dark) !important;
+      transition:
+        background var(--transition),
+        color var(--transition);
     }
 
-    /* 3. HERO SECTION */
+    .nav-contact:hover {
+      background: var(--dark);
+      color: var(--white) !important;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
     .hero {
-      padding: 75px 0 95px;
-      overflow: hidden;
+      padding: 82px 0 105px;
+      background:
+        radial-gradient(
+          ellipse at 90% 15%,
+          rgba(167, 131, 88, 0.10),
+          transparent 36%
+        ),
+        var(--background);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      gap: 70px;
+      gap: 85px;
     }
 
     .hero-copy {
       animation: fade-up 0.8s ease both;
     }
 
-    .hero-copy h1 {
+    .hero h1 {
       max-width: 680px;
-      margin-bottom: 23px;
+      margin-top: 26px;
+      font-size: clamp(43px, 6.2vw, 76px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -4px;
     }
 
-    .hero-copy h1 span {
+    .hero h1 span {
       color: var(--accent);
     }
 
-    .hero-copy > p {
-      max-width: 530px;
-      margin-bottom: 30px;
-      font-size: 1.06rem;
+    .hero-description {
+      max-width: 510px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .hero-location {
+    .button {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 23px;
+      border: 1px solid var(--dark);
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--dark);
+    }
+
+    .button-secondary:hover {
+      background: var(--white);
+    }
+
+    .hero-note {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-top: 28px;
+      gap: 10px;
+      margin-top: 32px;
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 12px;
     }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      border-radius: 50%;
+      background: #7a8a68;
+      box-shadow: 0 0 0 4px rgba(122, 138, 104, 0.13);
+    }
+
+    /* Hero photo: rectangular frame, no caption */
 
     .hero-visual {
       position: relative;
-      min-height: 460px;
-      display: grid;
-      place-items: center;
-      animation: fade-up 0.9s ease both;
+      width: 100%;
+      max-width: 440px;
+      margin-left: auto;
+      padding: 0 0 24px 24px;
+      animation: fade-up 0.9s ease 0.15s both;
     }
 
-    .hero-blob {
+    .hero-visual::before {
+      content: "";
       position: absolute;
-      inset: 30px 10px 10px 20px;
-      background: var(--lavender);
-      border-radius: 48% 52% 57% 43% / 44% 43% 57% 56%;
-      transform: rotate(-5deg);
+      top: 22px;
+      right: -18px;
+      bottom: 0;
+      left: 46px;
+      border: 1px solid var(--accent);
+      pointer-events: none;
     }
 
-    .photo-frame {
+    .hero-photo-frame {
       position: relative;
       z-index: 1;
-      width: min(340px, 78%);
-      aspect-ratio: 4 / 5;
+      height: 530px;
       overflow: hidden;
-      border: 9px solid rgba(255, 255, 255, 0.85);
-      border-radius: 170px 170px 30px 30px;
-      background: var(--peach);
+      background: #d8d2c9;
+      border: 8px solid var(--white);
       box-shadow: var(--shadow);
     }
 
-    .photo-frame img {
+    .hero-photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 30%;
+      transition: transform 0.7s ease;
     }
 
-    .floating-note {
-      position: absolute;
-      z-index: 2;
-      right: 0;
-      bottom: 55px;
-      max-width: 210px;
-      padding: 17px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: var(--shadow);
-      animation: float 5s ease-in-out infinite;
+    .hero-photo-frame:hover .hero-photo {
+      transform: scale(1.035);
     }
 
-    .floating-note strong {
-      display: block;
-      font-size: 0.9rem;
-    }
+    /* =========================================
+       SKILLS STRIP
+    ========================================= */
 
-    .floating-note span {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    /* 4. SKILLS STRIP */
     .skills-strip {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.48);
+      background: var(--dark);
+      color: var(--white);
+      padding: 26px 0;
     }
 
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 15px 38px;
-      list-style: none;
+      gap: 18px 25px;
     }
 
-    .skills-list li {
-      color: var(--muted);
-      font-size: 0.9rem;
+    .skills-list span {
+      color: #e6e1d9;
+      font-size: 12px;
       font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    /* 5. ABOUT SECTION */
+    .skills-list span::before {
+      content: "✦";
+      margin-right: 10px;
+      color: var(--accent-light);
+    }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+
     .about-grid {
       display: grid;
-      grid-template-columns: 0.75fr 1.25fr;
+      grid-template-columns: 0.85fr 1.15fr;
       align-items: center;
-      gap: 70px;
+      gap: 90px;
     }
 
-    .about-photo-wrap {
-      padding: 25px;
-      border-radius: var(--radius);
-      background: var(--mint);
+    .about-visual {
+      position: relative;
+      max-width: 410px;
+      padding: 0 20px 20px 0;
+    }
+
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 20px;
+      right: 0;
+      bottom: 0;
+      left: 20px;
+      border: 1px solid var(--accent);
+      pointer-events: none;
+    }
+
+    .about-photo-frame {
+      position: relative;
+      z-index: 1;
+      height: 460px;
+      overflow: hidden;
+      border: 7px solid var(--white);
+      background: #d8d2c9;
+      box-shadow: var(--shadow);
     }
 
     .about-photo {
-      aspect-ratio: 4 / 5;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 18px;
-      background: var(--peach);
-    }
-
-    .about-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 30%;
+      transition: transform 0.7s ease;
+    }
+
+    .about-photo-frame:hover .about-photo {
+      transform: scale(1.035);
     }
 
     .about-copy p {
-      margin-top: 18px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .about-details {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
     }
 
-    .detail {
-      padding: 17px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.65);
-    }
-
-    .detail strong {
+    .detail-label {
       display: block;
-      margin-bottom: 4px;
-      font-size: 0.86rem;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
-    .detail span {
-      color: var(--muted);
-      font-size: 0.84rem;
+    .detail-value {
+      font-size: 13px;
+      font-weight: 600;
       overflow-wrap: anywhere;
     }
 
-    /* 6. SERVICES */
-    .services-section {
-      background: #f1edf5;
+    /* =========================================
+       SERVICES
+    ========================================= */
+
+    .services {
+      background: #eae6df;
+    }
+
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .service-card {
+      min-height: 255px;
       padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.75);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: var(--surface);
+      border: 1px solid rgba(34, 35, 33, 0.07);
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
     }
 
     .service-card:hover {
       transform: translateY(-6px);
+      border-color: var(--accent-light);
       box-shadow: var(--shadow);
     }
 
     .service-number {
-      display: inline-grid;
-      width: 44px;
-      height: 44px;
-      margin-bottom: 24px;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--lavender);
+      display: inline-flex;
+      width: 43px;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      border: 1px solid var(--accent-light);
       color: var(--accent);
+      font-family: "Manrope", sans-serif;
+      font-size: 13px;
       font-weight: 700;
     }
 
     .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+      font-size: 20px;
+      letter-spacing: -0.5px;
     }
 
     .service-card p {
-      font-size: 0.92rem;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    /* 7. FEATURED KOFRA PROJECT */
+    /* =========================================
+       TECHNICAL SKILLS
+    ========================================= */
+
+    .technology-section {
+      background: var(--surface);
+    }
+
+    .technology-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .technology-card {
+      padding: 23px 20px;
+      border: 1px solid var(--border);
+      background: #faf9f6;
+      transition:
+        transform var(--transition),
+        border-color var(--transition);
+    }
+
+    .technology-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .technology-card strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 15px;
+    }
+
+    .technology-card span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================================
+       FEATURED KOFRA PROJECT
+    ========================================= */
+
     .project-card {
       display: grid;
-      grid-template-columns: 1fr 0.9fr;
+      grid-template-columns: 1fr 1fr;
       align-items: stretch;
-      gap: 40px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: var(--surface);
-      box-shadow: 0 10px 40px rgba(48, 39, 59, 0.04);
+      margin-top: 45px;
+      background: var(--dark);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .project-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(30px, 5vw, 60px);
+    }
+
+    .project-copy .eyebrow {
+      color: var(--accent-light);
+    }
+
+    .project-copy .eyebrow::before {
+      background: var(--accent-light);
+    }
+
+    .project-copy h3 {
+      margin-top: 22px;
+      font-size: clamp(30px, 4vw, 45px);
+      letter-spacing: -1.8px;
+    }
+
+    .project-copy p {
+      margin-top: 20px;
+      color: #d0cec8;
+      font-size: 14px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .project-tags span {
+      padding: 7px 11px;
+      border: 1px solid #5c5b55;
+      color: #e6e1d9;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+    }
+
+    .project-copy .button {
+      margin-top: 30px;
+      border-color: var(--accent-light);
+      background: var(--accent-light);
+      color: var(--dark);
+    }
+
+    .project-copy .button:hover {
+      background: var(--white);
+      border-color: var(--white);
     }
 
     .project-preview {
-      display: flex;
-      min-height: 350px;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      padding: 22px;
-      border-radius: 20px;
-      background: #ece9e5;
-    }
-
-    .browser-bar {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(41, 38, 51, 0.12);
+      justify-content: center;
+      min-height: 430px;
+      padding: 40px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(167, 131, 88, 0.25),
+          transparent 32%
+        ),
+        #343530;
     }
 
-    .browser-dot {
-      width: 8px;
-      height: 8px;
+    .preview-browser {
+      width: 100%;
+      max-width: 440px;
+      overflow: hidden;
+      background: #f4f1eb;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+      transform: rotate(-2deg);
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .preview-browser {
+      transform: rotate(0deg) translateY(-5px);
+    }
+
+    .browser-top {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 12px 14px;
+      background: #e3ded5;
+    }
+
+    .browser-top i {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: #aaa4a4;
+      background: #9c9589;
     }
 
-    .browser-label {
-      margin-left: 8px;
-      color: #6e6868;
-      font-size: 0.72rem;
+    .browser-address {
+      margin-left: 10px;
+      color: #777168;
+      font-size: 9px;
     }
 
     .store-preview {
-      display: grid;
-      flex: 1;
-      align-content: center;
-      justify-items: center;
-      gap: 12px;
-      padding: 30px 12px;
-      text-align: center;
-      background: radial-gradient(ellipse at 20% 20%, #fff 0, transparent 48%),
-                  linear-gradient(135deg, #f5f3ef, #d8d5d1);
+      min-height: 270px;
+      padding: 25px;
+      color: var(--dark);
+      background: #f8f6f1;
     }
 
-    .store-name {
+    .store-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #d8d2c9;
+    }
+
+    .store-logo {
       font-family: "Manrope", sans-serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: 19px;
       font-weight: 800;
-      letter-spacing: 0.15em;
-      color: #292929;
+      letter-spacing: 4px;
     }
 
-    .store-preview p {
-      color: #56514e;
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+    .store-menu {
+      color: #68665e;
+      font-size: 9px;
     }
 
-    .project-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 12px 0;
+    .store-hero {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      align-items: center;
+      gap: 12px;
+      padding-top: 28px;
     }
 
-    .project-tag {
+    .store-hero h4 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(22px, 3vw, 32px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+    }
+
+    .store-hero p {
+      margin-top: 10px;
+      color: #777168;
+      font-size: 9px;
+    }
+
+    .store-button {
       display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--mint);
-      color: #426954;
-      font-size: 0.75rem;
-      font-weight: 700;
+      margin-top: 15px;
+      padding: 8px 12px;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 8px;
+      letter-spacing: 1px;
     }
 
-    .project-info h3 {
-      margin-bottom: 15px;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-    }
-
-    .project-info > p {
-      margin-bottom: 22px;
-    }
-
-    .project-features {
+    .suitcase-illustration {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 28px;
-      list-style: none;
+      height: 150px;
+      align-items: center;
+      justify-content: center;
+      background: #e4ded4;
     }
 
-    .project-features li {
-      padding: 7px 11px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.76rem;
+    .suitcase {
+      position: relative;
+      width: 75px;
+      height: 105px;
+      border: 3px solid #686258;
+      border-radius: 7px;
+      background: linear-gradient(90deg, #b6a38a, #d2c1aa);
+      box-shadow: 10px 12px 15px rgba(0, 0, 0, 0.12);
     }
 
-    .project-note {
-      margin-top: 14px;
-      font-size: 0.78rem;
+    .suitcase::before {
+      content: "";
+      position: absolute;
+      top: -13px;
+      left: 24px;
+      width: 22px;
+      height: 10px;
+      border: 3px solid #686258;
+      border-bottom: 0;
+      border-radius: 5px 5px 0 0;
     }
 
-    /* 8. CONTACT */
+    .suitcase::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(75, 67, 55, 0.35);
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .contact {
+      background: var(--background);
+    }
+
     .contact-panel {
-      padding: clamp(30px, 6vw, 70px);
-      border-radius: 32px;
-      background: var(--lavender);
-    }
-
-    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 0.85fr;
-      gap: 50px;
-      align-items: center;
+      gap: 60px;
+      padding: clamp(30px, 6vw, 70px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-copy h2 {
+      max-width: 480px;
     }
 
     .contact-copy p {
-      max-width: 480px;
-      margin-top: 18px;
+      max-width: 430px;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .contact-links {
-      display: grid;
-      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-link {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-      padding: 15px 17px;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.75);
-      transition: transform 0.2s ease, background 0.2s ease;
+      flex-direction: column;
+      gap: 3px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left var(--transition);
     }
 
     .contact-link:hover {
-      transform: translateX(4px);
-      background: #fff;
+      padding-left: 8px;
     }
 
-    .contact-icon {
-      display: grid;
-      flex: 0 0 40px;
-      width: 40px;
-      height: 40px;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--pink);
-      font-size: 1.1rem;
-    }
-
-    .contact-link-text {
-      min-width: 0;
-    }
-
-    .contact-link-text strong {
-      display: block;
-      font-size: 0.86rem;
-    }
-
-    .contact-link-text span {
-      display: block;
-      overflow-wrap: anywhere;
+    .contact-link span {
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    /* 9. FOOTER */
-    .site-footer {
-      padding: 32px 0;
+    .contact-link strong {
+      font-size: 14px;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link:hover strong {
+      color: var(--accent);
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    .footer {
+      padding: 25px 0;
+      background: var(--dark);
+      color: #d8d4cc;
     }
 
     .footer-inner {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-    }
-
-    .footer-inner p {
-      font-size: 0.82rem;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 20px;
     }
 
-    .footer-links a {
-      color: var(--muted);
-      font-size: 0.84rem;
+    .footer p {
+      font-size: 11px;
     }
 
-    .footer-links a:hover {
-      color: var(--accent);
+    .footer a {
+      color: var(--accent-light);
+      font-size: 11px;
+      transition: color var(--transition);
     }
 
-    /* 10. ANIMATIONS */
+    .footer a:hover {
+      color: var(--white);
+    }
+
+    /* =========================================
+       ANIMATION
+    ========================================= */
+
     @keyframes fade-up {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(18px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    /* =========================================
+       TABLET
+    ========================================= */
 
-    /* 11. RESPONSIVE DESIGN */
     @media (max-width: 900px) {
-      .nav-links { gap: 15px; }
-      .nav-links a { font-size: 0.82rem; }
+      .section {
+        padding: 85px 0;
+      }
 
-      .hero-grid { gap: 30px; }
-      .hero-visual { min-height: 380px; }
-      .about-grid { gap: 35px; }
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero-photo-frame {
+        height: 440px;
+      }
+
+      .about-grid {
+        gap: 50px;
+      }
+
+      .about-photo-frame {
+        height: 400px;
+      }
 
       .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .project-card { gap: 25px; }
-      .contact-grid { gap: 28px; }
+      .technology-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-panel {
+        gap: 35px;
+      }
     }
 
-    @media (max-width: 650px) {
-      html { scroll-padding-top: 110px; }
+    /* =========================================
+       MOBILE
+    ========================================= */
 
+    @media (max-width: 650px) {
       .container {
-        width: min(100% - 32px, var(--max-width));
+        width: min(100% - 32px, 500px);
       }
 
-      .section { padding: 68px 0; }
+      .section {
+        padding: 70px 0;
+      }
 
-      .navigation {
-        min-height: auto;
-        padding: 16px 0;
-        flex-direction: column;
-        gap: 13px;
+      .nav {
+        min-height: 68px;
       }
 
       .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px 18px;
+        gap: 15px;
       }
 
-      .nav-links a { font-size: 0.8rem; }
-      .nav-contact { padding: 5px 10px; }
+      .nav-links a {
+        font-size: 11px;
+      }
 
-      .hero { padding: 55px 0 65px; }
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+
+      .nav-contact {
+        padding: 9px 12px;
+      }
+
+      .hero {
+        padding: 55px 0 75px;
+      }
 
       .hero-grid,
       .about-grid,
       .project-card,
-      .contact-grid {
+      .contact-panel {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy h1 {
-        font-size: clamp(2.7rem, 12vw, 4rem);
+      .hero-grid {
+        gap: 45px;
       }
 
-      .hero-visual { min-height: 390px; }
-      .photo-frame { width: min(290px, 75%); }
-
-      .floating-note {
-        right: 0;
-        bottom: 25px;
+      .hero h1 {
+        font-size: clamp(42px, 12vw, 62px);
+        letter-spacing: -2.5px;
       }
 
-      .skills-list { gap: 12px 20px; }
-
-      .about-photo-wrap {
-        max-width: 360px;
-        margin-inline: auto;
+      .hero-description {
+        font-size: 14px;
       }
 
-      .services-grid { grid-template-columns: 1fr; }
+      .hero-visual {
+        width: calc(100% - 12px);
+        max-width: 390px;
+        margin: 0 auto;
+        padding-left: 12px;
+      }
 
-      .project-card { padding: 16px; }
-      .project-preview { min-height: 270px; }
+      .hero-visual::before {
+        right: -9px;
+        left: 30px;
+      }
 
-      .project-info { padding: 12px 5px 5px; }
+      .hero-photo-frame {
+        height: 430px;
+      }
 
-      .contact-panel { padding: 28px 20px; }
+      .skills-list {
+        justify-content: flex-start;
+        gap: 15px 22px;
+      }
+
+      .skills-list span {
+        font-size: 10px;
+      }
+
+      .about-grid {
+        gap: 40px;
+      }
+
+      .about-visual {
+        width: calc(100% - 12px);
+        max-width: 370px;
+      }
+
+      .about-photo-frame {
+        height: 420px;
+      }
+
+      .about-details {
+        gap: 20px 12px;
+      }
+
+      .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .technology-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .technology-card {
+        padding: 18px 14px;
+      }
+
+      .project-preview {
+        min-height: 340px;
+        padding: 25px 18px;
+      }
+
+      .store-preview {
+        padding: 18px;
+      }
+
+      .store-hero {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 8px;
+      }
+
+      .suitcase-illustration {
+        height: 125px;
+      }
+
+      .suitcase {
+        transform: scale(0.85);
+      }
+
+      .contact-panel {
+        gap: 30px;
+        padding: 30px 22px;
+      }
 
       .footer-inner {
-        flex-direction: column;
         align-items: flex-start;
+        flex-direction: column;
       }
     }
+
+    @media (max-width: 380px) {
+      .hero-photo-frame {
+        height: 360px;
+      }
+
+      .about-photo-frame {
+        height: 360px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .about-details {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Respect reduced-motion preferences */
 
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -766,152 +1132,184 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header class="site-header">
-    <nav class="navigation container" aria-label="Main navigation">
-      <a class="brand" href="#home">Hranush<span>.</span></a>
+  <!-- HEADER -->
 
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-contact">Let's talk ↗</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container nav">
+
+      <a class="logo" href="#home">
+        HRANUSH<span>.</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-contact" href="#contact">Let's Talk</a>
+      </nav>
+
+    </div>
   </header>
 
   <main>
 
     <!-- HERO -->
+
     <section class="hero" id="home">
-      <div class="hero-grid container">
+      <div class="container hero-grid">
 
         <div class="hero-copy">
-          <span class="eyebrow">Web Design · Front-End</span>
+
+          <span class="eyebrow">Portfolio · Armenia</span>
 
           <h1>
-            Hello, I'm<br>
-            Hranush <span>Petrosyan.</span>
+            Designing digital
+            <span>experiences</span>
+            that stand out.
           </h1>
 
-          <p>
-            Web Designer &amp; Front-End Developer creating thoughtful,
-            responsive and visually engaging digital experiences.
+          <p class="hero-description">
+            Hi, I'm Hranush Petrosyan — a Web Designer and Web Developer
+            passionate about creating modern, responsive websites.
+            I combine visual design, front-end development, JavaScript,
+            and Shopify customization to build thoughtful digital
+            experiences.
           </p>
 
-          <div class="hero-buttons">
-            <a class="button" href="#projects">Explore my work ↗</a>
-            <a class="button button-light" href="mailto:hrpetrosyan19@gmail.com">Contact me</a>
+          <div class="hero-actions">
+
+            <a class="button button-primary" href="#projects">
+              Explore My Work ↗
+            </a>
+
+            <a class="button button-secondary" href="#contact">
+              Get in Touch
+            </a>
+
           </div>
 
-          <div class="hero-location">
-            <span aria-hidden="true">📍</span>
-            <span>Based in Armenia · Available for remote work</span>
+          <div class="hero-note">
+            <span class="status-dot"></span>
+            Open to freelance opportunities
           </div>
+
         </div>
 
         <div class="hero-visual">
-          <div class="hero-blob" aria-hidden="true"></div>
 
-          <!-- YOUR SHOPIFY-HOSTED PHOTO -->
-          <div class="photo-frame">
+          <div class="hero-photo-frame">
             <img
-              src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_12.50.20.jpg?v=1792579768"
-              alt="Portrait of Hranush Petrosyan, Web Designer and Front-End Developer"
-              loading="eager">
+              class="hero-photo"
+              src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_12.50.20_cc67c365-068c-4ee9-addd-797c81ba2464.jpg?v=1792581293"
+              alt="Hranush Petrosyan"
+              fetchpriority="high"
+            >
           </div>
 
-          <div class="floating-note">
-            <strong>Design with purpose ✦</strong>
-            <span>Creative thinking, clean code.</span>
-          </div>
+          <!-- Photo caption removed as requested -->
+
         </div>
 
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="skills-strip" aria-label="Skills">
-      <div class="container">
-        <ul class="skills-list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Responsive Design</li>
-          <li>Shopify</li>
-          <li>Landing Pages</li>
-          <li>UI Design</li>
-        </ul>
+    <!-- SKILLS STRIP -->
+
+    <section class="skills-strip" aria-label="Core skills">
+      <div class="container skills-list">
+        <span>Web Design</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Node.js</span>
+        <span>Shopify</span>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="about-grid container">
 
-        <div class="about-photo-wrap">
-          <!-- THE SAME PHOTO IN THE ABOUT SECTION -->
-          <div class="about-photo">
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+
+          <div class="about-photo-frame">
             <img
-              src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_12.50.20.jpg?v=1792579768"
-              alt="Hranush Petrosyan"
-              loading="lazy">
+              class="about-photo"
+              src="https://cdn.shopify.com/s/files/1/0997/6004/6396/files/WhatsApp_Image_2026-10-21_at_12.50.20_cc67c365-068c-4ee9-addd-797c81ba2464.jpg?v=1792581293"
+              alt="Portrait of Hranush Petrosyan"
+              loading="lazy"
+            >
           </div>
+
         </div>
 
         <div class="about-copy">
-          <span class="eyebrow">A little about me</span>
 
-          <h2>Turning ideas into digital experiences.</h2>
+          <span class="eyebrow">A Little About Me</span>
+
+          <h2>Design meets development.</h2>
 
           <p>
-            I'm Hranush Petrosyan, a Web Designer &amp; Front-End Developer
-            based in Armenia. I enjoy creating clean, user-friendly
-            websites that combine thoughtful design with responsive layouts.
+            I create digital experiences with a focus on modern design,
+            clear structure, and usability. I enjoy transforming ideas
+            into websites that look professional, work smoothly, and
+            adapt beautifully to different screen sizes.
           </p>
 
           <p>
-            My portfolio includes Shopify storefront work and web page
-            design. I focus on clear visual hierarchy, usability, and
-            details that make a website feel polished.
+            My work brings together web design, front-end development,
+            JavaScript, Node.js, and Shopify customization. I also work
+            with Shopify Liquid and integrations to customize storefronts
+            and support e-commerce experiences.
           </p>
 
           <div class="about-details">
-            <div class="detail">
-              <strong>Location</strong>
-              <span>Armenia</span>
+
+            <div>
+              <span class="detail-label">Location</span>
+              <span class="detail-value">Armenia</span>
             </div>
 
-            <div class="detail">
-              <strong>Specialization</strong>
-              <span>Web Design &amp; Front-End</span>
+            <div>
+              <span class="detail-label">Specialization</span>
+              <span class="detail-value">Web Design & Development</span>
             </div>
 
-            <div class="detail">
-              <strong>Email</strong>
-              <span>hrpetrosyan19@gmail.com</span>
+            <div>
+              <span class="detail-label">Development</span>
+              <span class="detail-value">JavaScript · Node.js</span>
             </div>
 
-            <div class="detail">
-              <strong>Work preference</strong>
-              <span>Remote projects</span>
+            <div>
+              <span class="detail-label">E-commerce</span>
+              <span class="detail-value">Shopify · Liquid</span>
             </div>
+
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <section class="section services-section" id="services">
+
+    <section class="section services" id="services">
       <div class="container">
 
-        <div class="section-heading">
-          <span class="eyebrow">What I do</span>
-          <h2>Design that works beautifully.</h2>
-          <p>
-            From the first visual concept to a responsive page,
-            I aim to make every digital experience clear and engaging.
-          </p>
+        <div class="section-heading-row">
+          <div>
+
+            <span class="eyebrow">What I Do</span>
+
+            <h2>Services & Expertise</h2>
+
+            <p class="section-intro">
+              Design, development, and e-commerce customization
+              to help businesses create a strong online presence.
+            </p>
+
+          </div>
         </div>
 
         <div class="services-grid">
@@ -920,26 +1318,53 @@
             <span class="service-number">01</span>
             <h3>Web Design</h3>
             <p>
-              Modern layouts, harmonious colors, typography,
-              and intuitive page structure.
+              Clean, modern layouts that communicate your brand
+              clearly and create a consistent visual experience.
             </p>
           </article>
 
           <article class="service-card">
             <span class="service-number">02</span>
-            <h3>HTML &amp; CSS</h3>
+            <h3>Front-End Development</h3>
             <p>
-              Clean, responsive page structures designed to work
-              across desktop, tablet, and mobile screens.
+              Responsive interfaces using HTML, CSS, and JavaScript,
+              with attention to structure, accessibility, and usability.
             </p>
           </article>
 
           <article class="service-card">
             <span class="service-number">03</span>
-            <h3>Shopify Pages</h3>
+            <h3>Back-End Development</h3>
             <p>
-              Storefront styling, custom page sections,
-              and e-commerce layouts tailored to a brand.
+              Server-side development with Node.js, supporting
+              application logic and integrations where required.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3>Shopify Development</h3>
+            <p>
+              Shopify theme customization, Liquid templates,
+              custom sections, and storefront enhancements.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05</span>
+            <h3>Shopify Integrations</h3>
+            <p>
+              Connecting and configuring Shopify tools and
+              integrations to support e-commerce workflows.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06</span>
+            <h3>Landing Pages</h3>
+            <p>
+              Focused landing pages with clear messaging,
+              responsive layouts, and effective calls to action.
             </p>
           </article>
 
@@ -947,160 +1372,237 @@
       </div>
     </section>
 
-    <!-- FEATURED KOFRA PROJECT -->
+    <!-- TECHNICAL SKILLS -->
+
+    <section class="section technology-section">
+      <div class="container">
+
+        <span class="eyebrow">Technical Toolkit</span>
+
+        <h2>Tools I work with.</h2>
+
+        <p class="section-intro">
+          A combination of design, front-end, server-side,
+          and e-commerce technologies.
+        </p>
+
+        <div class="technology-grid">
+
+          <div class="technology-card">
+            <strong>HTML5</strong>
+            <span>Semantic page structure</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>CSS3</strong>
+            <span>Layouts and responsive styling</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>JavaScript</strong>
+            <span>Interactive web functionality</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>Node.js</strong>
+            <span>Server-side JavaScript</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>Shopify Liquid</strong>
+            <span>Theme templates and sections</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>Shopify</strong>
+            <span>Storefront customization</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>Integrations</strong>
+            <span>E-commerce connections</span>
+          </div>
+
+          <div class="technology-card">
+            <strong>Responsive Design</strong>
+            <span>Mobile, tablet, and desktop</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT: KOFRA -->
+
     <section class="section" id="projects">
       <div class="container">
 
-        <div class="section-heading">
-          <span class="eyebrow">Selected work</span>
-          <h2>A project I'm proud to share.</h2>
-          <p>
-            Explore my Shopify storefront project and see the live store.
-          </p>
-        </div>
+        <span class="eyebrow">Selected Work</span>
+
+        <h2>A project in focus.</h2>
+
+        <p class="section-intro">
+          An e-commerce project bringing together brand identity,
+          product presentation, and a considered shopping experience.
+        </p>
 
         <article class="project-card">
 
-          <!-- Styled project preview; replace with a store screenshot if desired -->
-          <div class="project-preview">
-            <div class="browser-bar" aria-hidden="true">
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-label">KOFRA · Shopify Store</span>
-            </div>
+          <div class="project-copy">
 
-            <div class="store-preview">
-              <div class="store-name">KOFRA</div>
-              <p>Designed for the journey</p>
-            </div>
-          </div>
+            <span class="eyebrow">Shopify · E-commerce</span>
 
-          <div class="project-info">
-            <span class="project-tag">Featured Shopify Project</span>
-
-            <h3>KOFRA — E-commerce Store</h3>
+            <h3>KOFRA</h3>
 
             <p>
-              A Shopify storefront project for a luggage brand,
-              presented as part of my web design and front-end portfolio.
-              Visit the live store to explore the current design.
+              A premium luggage storefront concept focused on
+              product presentation, modern visual direction,
+              and a streamlined online shopping experience.
             </p>
 
-            <ul class="project-features">
-              <li>Shopify</li>
-              <li>E-commerce</li>
-              <li>Web Design</li>
-              <li>Responsive Layout</li>
-            </ul>
+            <div class="project-tags">
+              <span>SHOPIFY</span>
+              <span>LIQUID</span>
+              <span>HTML & CSS</span>
+              <span>RESPONSIVE DESIGN</span>
+            </div>
 
             <a
               class="button"
               href="https://hranush-petrosyan-d6ijjswg.myshopify.com/"
               target="_blank"
-              rel="noopener noreferrer">
-              Visit live store ↗
+              rel="noopener noreferrer"
+            >
+              Visit Live Store ↗
             </a>
 
-            <p class="project-note">
-              If the store is password-protected, visitors may need
-              the storefront password to view it.
-            </p>
+          </div>
+
+          <div
+            class="project-preview"
+            aria-label="Stylized KOFRA storefront preview"
+          >
+
+            <div class="preview-browser">
+
+              <div class="browser-top">
+                <i></i>
+                <i></i>
+                <i></i>
+                <span class="browser-address">KOFRA · Online Store</span>
+              </div>
+
+              <div class="store-preview">
+
+                <div class="store-header">
+                  <span class="store-logo">KOFRA</span>
+                  <span class="store-menu">COLLECTION &nbsp; BAG</span>
+                </div>
+
+                <div class="store-hero">
+
+                  <div>
+                    <h4>Travel<br>with purpose.</h4>
+                    <p>Designed for every journey.</p>
+                    <span class="store-button">DISCOVER MORE</span>
+                  </div>
+
+                  <div class="suitcase-illustration">
+                    <div class="suitcase"></div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
           </div>
 
         </article>
-
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
+
+    <section class="section contact" id="contact">
       <div class="container">
 
         <div class="contact-panel">
-          <div class="contact-grid">
 
-            <div class="contact-copy">
-              <span class="eyebrow">Get in touch</span>
+          <div class="contact-copy">
 
-              <h2>Have a project in mind?</h2>
+            <span class="eyebrow">Let's Connect</span>
 
-              <p>
-                I'd love to hear about your ideas, discuss a website
-                project, or connect about freelance opportunities.
-                Choose the easiest way to reach me.
-              </p>
+            <h2>Have a project in mind?</h2>
 
-              <div style="margin-top: 26px;">
-                <a class="button" href="mailto:hrpetrosyan19@gmail.com">
-                  Send me an email ↗
-                </a>
-              </div>
-            </div>
+            <p>
+              I'm interested in connecting with people and businesses
+              looking for web design, front-end development, Node.js
+              solutions, and Shopify customization. Let's discuss
+              your next idea.
+            </p>
 
-            <div class="contact-links">
+            <a
+              class="button button-primary"
+              href="mailto:hrpetrosyan19@gmail.com"
+            >
+              Start a Conversation ↗
+            </a>
 
-              <a class="contact-link" href="mailto:hrpetrosyan19@gmail.com">
-                <span class="contact-icon" aria-hidden="true">✉</span>
-                <span class="contact-link-text">
-                  <strong>Email</strong>
-                  <span>hrpetrosyan19@gmail.com</span>
-                </span>
-              </a>
+          </div>
 
-              <a class="contact-link" href="tel:+37477198985">
-                <span class="contact-icon" aria-hidden="true">☎</span>
-                <span class="contact-link-text">
-                  <strong>Phone</strong>
-                  <span>+374 77 198985</span>
-                </span>
-              </a>
+          <div class="contact-links">
 
-              <a class="contact-link"
-                 href="https://wa.me/37477198985"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                <span class="contact-icon" aria-hidden="true">◉</span>
-                <span class="contact-link-text">
-                  <strong>WhatsApp</strong>
-                  <span>Message me directly</span>
-                </span>
-              </a>
+            <a
+              class="contact-link"
+              href="mailto:hrpetrosyan19@gmail.com"
+            >
+              <span>Email</span>
+              <strong>hrpetrosyan19@gmail.com</strong>
+            </a>
 
-              <a class="contact-link"
-                 href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                <span class="contact-icon" aria-hidden="true">in</span>
-                <span class="contact-link-text">
-                  <strong>LinkedIn</strong>
-                  <span>Connect with me professionally</span>
-                </span>
-              </a>
+            <a
+              class="contact-link"
+              href="tel:+37477198985"
+            >
+              <span>Phone</span>
+              <strong>+374 77 198985</strong>
+            </a>
 
-            </div>
+            <a
+              class="contact-link"
+              href="https://wa.me/37477198985"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>WhatsApp</span>
+              <strong>Message me directly ↗</strong>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>LinkedIn</span>
+              <strong>Connect professionally ↗</strong>
+            </a>
+
           </div>
         </div>
-
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner container">
 
-      <a class="brand" href="#home">Hranush<span>.</span></a>
+  <footer class="footer">
+    <div class="container footer-inner">
 
       <p>© 2026 Hranush Petrosyan. All rights reserved.</p>
 
-      <div class="footer-links">
-        <a href="mailto:hrpetrosyan19@gmail.com">Email</a>
-        <a href="https://wa.me/37477198985" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="#home">Back to top ↑</a>
-      </div>
+      <a href="#home">Back to top ↑</a>
 
     </div>
   </footer>
