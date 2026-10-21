@@ -4,47 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hranush Petrosyan — Frontend Developer, UI/UX Designer, and Shopify Page Creator.">
-  <meta name="theme-color" content="#faf8f5">
+  <meta name="theme-color" content="#f8f5f2">
 
-  <title>Hranush Petrosyan | Creative Developer & Designer</title>
+  <title>Hranush Petrosyan | Web Designer & Front-End Developer</title>
+
+  <meta name="description"
+    content="Portfolio of Hranush Petrosyan, Web Designer and Front-End Developer based in Armenia. Explore web design, HTML, CSS and Shopify projects.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* =========================================
-       1. DESIGN SYSTEM
-    ========================================= */
+    /* =========================
+       1. GLOBAL STYLES
+    ========================== */
+
     :root {
-      --background: #faf8f5;
+      --background: #f8f5f2;
       --surface: #ffffff;
-      --text: #27252b;
-      --muted: #77737c;
-      --lavender: #eae3f5;
-      --lavender-dark: #7d65ad;
-      --peach: #f5e4da;
-      --mint: #e1eee5;
-      --border: #e9e4df;
-
-      --heading-font: "Manrope", sans-serif;
-      --body-font: "DM Sans", sans-serif;
-
-      --container: 1140px;
+      --lavender: #e8e1f4;
+      --peach: #f5e2d7;
+      --mint: #e0eee7;
+      --pink: #f2e3e8;
+      --text: #292633;
+      --muted: #77727e;
+      --accent: #8068a5;
+      --border: #e8e2e7;
       --radius: 24px;
-      --pill: 999px;
-      --shadow: 0 20px 60px rgba(46, 36, 65, 0.08);
+      --shadow: 0 15px 45px rgba(48, 39, 59, 0.07);
+      --max-width: 1160px;
     }
 
-    /* =========================================
-       2. RESET & GLOBAL STYLES
-    ========================================= */
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -53,13 +50,29 @@
     }
 
     body {
-      margin: 0;
+      font-family: "DM Sans", sans-serif;
       background: var(--background);
       color: var(--text);
-      font-family: var(--body-font);
-      font-size: 16px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    p {
+      color: var(--muted);
     }
 
     a {
@@ -67,1257 +80,790 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
     img {
       display: block;
       max-width: 100%;
     }
 
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible {
-      outline: 3px solid var(--lavender-dark);
-      outline-offset: 4px;
-    }
-
-    ::selection {
-      background: var(--lavender);
-      color: var(--text);
-    }
-
     .container {
-      width: min(var(--container), calc(100% - 48px));
+      width: min(var(--max-width), calc(100% - 48px));
       margin-inline: auto;
     }
 
     .section {
-      padding-block: 100px;
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading p {
+      margin-top: 15px;
+      max-width: 550px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--lavender-dark);
-      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.17em;
     }
 
-    .eyebrow::before {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--lavender-dark);
-      content: "";
-    }
-
-    .section-title {
-      max-width: 720px;
-      margin: 18px 0;
-      font-family: var(--heading-font);
-      font-size: clamp(34px, 5vw, 54px);
-      font-weight: 800;
-      letter-spacing: -0.065em;
-      line-height: 1.14;
-    }
-
-    .section-description {
-      max-width: 570px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .highlight {
-      color: var(--lavender-dark);
-    }
-
-    /* =========================================
-       3. BUTTONS
-    ========================================= */
     .button {
       display: inline-flex;
-      min-height: 52px;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 9px;
+      min-height: 50px;
       padding: 13px 23px;
       border: 1px solid transparent;
-      border-radius: var(--pill);
-      font-size: 14px;
-      font-weight: 700;
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.25s ease, background 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .button:hover {
       transform: translateY(-3px);
+      background: var(--accent);
+      box-shadow: 0 10px 25px rgba(128, 104, 165, 0.2);
     }
 
-    .button-primary {
-      background: var(--text);
-      color: white;
-    }
-
-    .button-primary:hover {
-      background: var(--lavender-dark);
-    }
-
-    .button-outline {
-      border-color: var(--border);
+    .button-light {
       background: transparent;
+      color: var(--text);
+      border-color: var(--border);
     }
 
-    .button-outline:hover {
-      border-color: var(--lavender-dark);
-      background: var(--lavender);
+    .button-light:hover {
+      color: #fff;
+      border-color: var(--accent);
     }
 
-    .arrow {
-      transition: transform 0.25s ease;
-    }
+    /* =========================
+       2. NAVIGATION
+    ========================== */
 
-    .button:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    /* =========================================
-       4. HEADER & NAVIGATION
-    ========================================= */
-    .header {
+    .site-header {
       position: sticky;
-      z-index: 10;
       top: 0;
-      border-bottom: 1px solid rgba(233, 228, 223, 0.8);
-      background: rgba(250, 248, 245, 0.92);
-      backdrop-filter: blur(16px);
+      z-index: 10;
+      background: rgba(248, 245, 242, 0.92);
+      border-bottom: 1px solid rgba(232, 226, 231, 0.8);
+      backdrop-filter: blur(14px);
     }
 
     .navigation {
       display: flex;
-      min-height: 78px;
       align-items: center;
       justify-content: space-between;
+      min-height: 78px;
       gap: 24px;
     }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      font-family: var(--heading-font);
-      font-size: 17px;
+    .brand {
+      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: -0.045em;
+      white-space: nowrap;
     }
 
-    .logo-icon {
-      display: grid;
-      width: 36px;
-      height: 36px;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--lavender);
-      color: var(--lavender-dark);
-      font-size: 20px;
+    .brand span {
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
+      gap: 27px;
+      list-style: none;
     }
 
-    .nav-links > a:not(.button) {
-      position: relative;
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.88rem;
       transition: color 0.2s ease;
     }
 
-    .nav-links > a:not(.button)::after {
-      position: absolute;
-      right: 0;
-      bottom: -6px;
-      left: 0;
-      height: 1px;
-      background: var(--lavender-dark);
-      content: "";
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.25s ease;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    .nav-links > a:not(.button):hover {
-      color: var(--text);
+    .nav-contact {
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text) !important;
     }
 
-    .nav-links > a:not(.button):hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
+    /* =========================
+       3. HERO SECTION
+    ========================== */
 
-    .nav-button {
-      min-height: 42px;
-      padding: 9px 17px;
-    }
-
-    /* =========================================
-       5. HERO SECTION
-    ========================================= */
     .hero {
-      position: relative;
+      padding: 75px 0 95px;
       overflow: hidden;
-      padding-block: 90px 85px;
-    }
-
-    .hero::before {
-      position: absolute;
-      z-index: -1;
-      top: -180px;
-      right: -120px;
-      width: 540px;
-      height: 540px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(201, 184, 232, 0.35),
-        transparent 70%
-      );
-      content: "";
-    }
-
-    .hero::after {
-      position: absolute;
-      z-index: -1;
-      bottom: -200px;
-      left: -180px;
-      width: 440px;
-      height: 440px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(221, 238, 226, 0.8),
-        transparent 70%
-      );
-      content: "";
     }
 
     .hero-grid {
       display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: center;
-      gap: 65px;
-      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
     }
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--pill);
-      background: rgba(255, 255, 255, 0.75);
-      color: #5d595f;
-      font-size: 12px;
-      font-weight: 600;
+    .hero-copy {
+      animation: fade-up 0.8s ease both;
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #72a988;
-      box-shadow: 0 0 0 4px rgba(114, 169, 136, 0.12);
+    .hero-copy h1 {
+      max-width: 680px;
+      margin-bottom: 23px;
     }
 
-    .hero h1 {
-      margin: 28px 0 20px;
-      font-family: var(--heading-font);
-      font-size: clamp(46px, 6.3vw, 76px);
-      font-weight: 800;
-      letter-spacing: -0.085em;
-      line-height: 1.04;
+    .hero-copy h1 span {
+      color: var(--accent);
     }
 
-    .hero h1 span {
-      color: var(--lavender-dark);
-    }
-
-    .hero-text {
-      max-width: 520px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.9;
+    .hero-copy > p {
+      max-width: 530px;
+      margin-bottom: 30px;
+      font-size: 1.06rem;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 30px;
+      gap: 12px;
     }
 
-    .hero-note {
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* CSS-only portfolio illustration */
-    .hero-art {
-      position: relative;
-      min-width: 0;
-      padding: 15px;
-    }
-
-    .art-ring {
-      position: absolute;
-      z-index: -1;
-      top: -25px;
-      right: -10px;
-      width: 210px;
-      height: 210px;
-      border: 1px solid rgba(125, 101, 173, 0.22);
-      border-radius: 50%;
-    }
-
-    .art-ring::before,
-    .art-ring::after {
-      position: absolute;
-      border: 1px solid rgba(125, 101, 173, 0.18);
-      border-radius: 50%;
-      content: "";
-    }
-
-    .art-ring::before {
-      inset: 25px;
-    }
-
-    .art-ring::after {
-      inset: 50px;
-    }
-
-    .art-window {
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 23px;
-      background: white;
-      box-shadow: 0 30px 80px rgba(55, 41, 76, 0.12);
-      transform: rotate(2deg);
-      transition: transform 0.35s ease;
-    }
-
-    .art-window:hover {
-      transform: rotate(0) translateY(-5px);
-    }
-
-    .window-bar {
+    .hero-location {
       display: flex;
-      height: 43px;
       align-items: center;
-      gap: 6px;
-      padding-inline: 15px;
-      border-bottom: 1px solid #f0edf0;
+      gap: 8px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.88rem;
     }
 
-    .window-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #e0dce4;
-    }
-
-    .window-address {
-      width: 45%;
-      margin-left: 12px;
-      padding: 3px 10px;
-      border-radius: 5px;
-      background: #f7f5f8;
-      color: #99939f;
-      font-size: 9px;
-      text-align: center;
-    }
-
-    .art-canvas {
+    .hero-visual {
       position: relative;
+      min-height: 460px;
       display: grid;
-      min-height: 350px;
-      overflow: hidden;
-      padding: 27px;
-      align-items: center;
-      background: linear-gradient(140deg, #eee6f8, #f9eae0 65%, #e6eee7);
-      grid-template-columns: 1fr 0.8fr;
+      place-items: center;
+      animation: fade-up 0.9s ease both;
     }
 
-    .canvas-label {
-      color: var(--lavender-dark);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+    .hero-blob {
+      position: absolute;
+      inset: 30px 10px 10px 20px;
+      background: var(--lavender);
+      border-radius: 48% 52% 57% 43% / 44% 43% 57% 56%;
+      transform: rotate(-5deg);
     }
 
-    .canvas-title {
-      margin: 18px 0 12px;
-      font-family: var(--heading-font);
-      font-size: clamp(29px, 3.5vw, 43px);
-      font-weight: 800;
-      letter-spacing: -0.08em;
-      line-height: 1.07;
-    }
-
-    .canvas-description {
-      color: #716b77;
-      font-size: 11px;
-      line-height: 1.9;
-    }
-
-    .canvas-visual {
+    .photo-frame {
       position: relative;
-      min-height: 230px;
+      z-index: 1;
+      width: min(340px, 78%);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 9px solid rgba(255, 255, 255, 0.85);
+      border-radius: 170px 170px 30px 30px;
+      background: var(--peach);
+      box-shadow: var(--shadow);
     }
 
-    .visual-circle {
-      position: absolute;
-      top: 17%;
-      right: 0;
-      width: 155px;
-      height: 155px;
-      border-radius: 50%;
-      background: #c7b5e9;
-    }
-
-    .visual-circle::before {
-      position: absolute;
-      top: 12px;
-      left: -12px;
+    .photo-frame img {
       width: 100%;
       height: 100%;
-      border: 1px solid rgba(125, 101, 173, 0.45);
-      border-radius: 50%;
-      content: "";
+      object-fit: cover;
     }
 
-    .visual-shape {
-      position: absolute;
-      right: 4%;
-      bottom: 2%;
-      width: 105px;
-      height: 130px;
-      border: 8px solid rgba(255, 255, 255, 0.7);
-      border-radius: 60px 60px 18px 18px;
-      background: linear-gradient(145deg, #f1cdbb, #d8a8a9);
-      transform: rotate(-13deg);
+    .photo-placeholder {
+      display: grid;
+      place-content: center;
+      gap: 10px;
+      padding: 25px;
+      text-align: center;
+      color: var(--text);
     }
 
-    .visual-star {
-      position: absolute;
-      top: 6%;
-      left: 0;
-      color: white;
-      font-size: 35px;
+    .photo-placeholder strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.2rem;
     }
 
-    .floating-card {
+    .photo-placeholder span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .floating-note {
       position: absolute;
-      right: -7px;
-      bottom: 32px;
-      padding: 13px 17px;
+      z-index: 2;
+      right: 0;
+      bottom: 55px;
+      max-width: 210px;
+      padding: 17px 20px;
       border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 14px;
-      background: white;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.93);
       box-shadow: var(--shadow);
-      font-size: 11px;
-      font-weight: 700;
-      animation: float 4s ease-in-out infinite;
+      animation: float 5s ease-in-out infinite;
     }
 
-    .floating-card span {
+    .floating-note strong {
       display: block;
+      font-size: 0.9rem;
+    }
+
+    .floating-note span {
       color: var(--muted);
-      font-size: 10px;
-      font-weight: 400;
+      font-size: 0.8rem;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    /* =========================
+       4. SKILLS STRIP
+    ========================== */
 
-    /* =========================================
-       6. SKILLS STRIP
-    ========================================= */
     .skills-strip {
-      border-block: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    .skills-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      padding-block: 25px;
-    }
-
-    .skills-label {
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.48);
     }
 
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 15px 38px;
+      list-style: none;
     }
 
-    .skill {
-      padding: 8px 13px;
-      border: 1px solid var(--border);
-      border-radius: var(--pill);
-      background: white;
-      color: #625d66;
-      font-size: 12px;
+    .skills-list li {
+      color: var(--muted);
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
-    /* =========================================
-       7. ABOUT SECTION
-    ========================================= */
+    /* =========================
+       5. ABOUT SECTION
+    ========================== */
+
     .about-grid {
       display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
       align-items: center;
-      gap: 75px;
-      grid-template-columns: 1fr 0.9fr;
+      gap: 70px;
     }
 
-    .about-text p {
-      color: var(--muted);
-    }
-
-    .about-text strong {
-      color: var(--text);
-    }
-
-    .about-values {
-      display: grid;
-      margin-top: 28px;
-      gap: 14px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .value-item {
-      padding: 17px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.6);
-    }
-
-    .value-item h3 {
-      margin: 0 0 5px;
-      font-family: var(--heading-font);
-      font-size: 14px;
-    }
-
-    .value-item p {
-      margin: 0;
-      font-size: 12px;
-    }
-
-    .about-visual {
-      position: relative;
-      display: grid;
-      min-height: 420px;
-      overflow: hidden;
-      place-items: center;
-      border-radius: 30px;
+    .about-photo-wrap {
+      padding: 25px;
+      border-radius: var(--radius);
       background: var(--mint);
     }
 
-    .about-visual::before {
-      position: absolute;
-      top: -80px;
-      right: -70px;
-      width: 260px;
-      height: 260px;
-      border: 1px solid rgba(59, 104, 76, 0.2);
-      border-radius: 50%;
-      content: "";
+    .about-photo {
+      aspect-ratio: 4 / 5;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--peach);
     }
 
-    .about-visual::after {
-      position: absolute;
-      bottom: -100px;
-      left: -80px;
-      width: 290px;
-      height: 290px;
-      border: 1px solid rgba(59, 104, 76, 0.2);
-      border-radius: 50%;
-      content: "";
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .design-note {
-      position: relative;
-      z-index: 1;
-      width: min(300px, 80%);
-      padding: 27px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.88);
-      box-shadow: var(--shadow);
-      transform: rotate(-4deg);
-      transition: transform 0.3s ease;
+    .about-copy p {
+      margin-top: 18px;
     }
 
-    .design-note:hover {
-      transform: rotate(0) scale(1.03);
+    .about-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
     }
 
-    .design-note-top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 28px;
+    .detail {
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .detail strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.86rem;
+    }
+
+    .detail span {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 0.84rem;
+      overflow-wrap: anywhere;
     }
 
-    .design-note h3 {
-      margin: 0;
-      font-family: var(--heading-font);
-      font-size: 32px;
-      letter-spacing: -0.07em;
-      line-height: 1.1;
-    }
+    /* =========================
+       6. SERVICES
+    ========================== */
 
-    .design-note p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .palette {
-      display: flex;
-      gap: 9px;
-      margin-top: 20px;
-    }
-
-    .palette span {
-      width: 30px;
-      height: 30px;
-      border-radius: 9px;
-    }
-
-    .palette span:nth-child(1) { background: var(--lavender); }
-    .palette span:nth-child(2) { background: var(--peach); }
-    .palette span:nth-child(3) { background: var(--mint); }
-    .palette span:nth-child(4) { background: var(--text); }
-
-    /* =========================================
-       8. SERVICES & BENEFITS
-    ========================================= */
-    .services {
-      background: #f1efeb;
-    }
-
-    .section-heading-row {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 35px;
-      margin-bottom: 42px;
-    }
-
-    .section-heading-row .section-title {
-      margin-bottom: 0;
+    .services-section {
+      background: #f1edf5;
     }
 
     .services-grid {
       display: grid;
-      gap: 18px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
     .service-card {
-      min-height: 255px;
-      padding: 27px;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      border-radius: 21px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.75);
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .service-card:hover {
       transform: translateY(-6px);
-      background: white;
       box-shadow: var(--shadow);
     }
 
-    .service-icon {
-      display: grid;
-      width: 52px;
-      height: 52px;
+    .service-number {
+      display: inline-grid;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 24px;
       place-items: center;
-      border-radius: 16px;
-      font-size: 24px;
+      border-radius: 14px;
+      background: var(--lavender);
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    .icon-lavender { background: var(--lavender); }
-    .icon-peach { background: var(--peach); }
-    .icon-mint { background: var(--mint); }
-
     .service-card h3 {
-      margin: 22px 0 9px;
-      font-family: var(--heading-font);
-      font-size: 18px;
-      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
     }
 
     .service-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.9;
+      font-size: 0.92rem;
     }
 
-    .service-index {
-      display: block;
-      margin-top: 22px;
-      color: #aaa4aa;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-    }
-
-    /* =========================================
-       9. PORTFOLIO PROJECTS
-    ========================================= */
-    .projects-grid {
-      display: grid;
-      gap: 28px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    /* =========================
+       7. FEATURED PROJECTS
+    ========================== */
 
     .project-card {
-      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: stretch;
+      gap: 40px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--surface);
+      box-shadow: 0 10px 40px rgba(48, 39, 59, 0.04);
     }
 
     .project-preview {
-      display: grid;
-      min-height: 310px;
-      overflow: hidden;
-      place-items: center;
-      border-radius: 23px;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover .project-preview {
-      transform: translateY(-5px);
-    }
-
-    .preview-lavender { background: #e9e0f5; }
-    .preview-peach { background: #f3dfd4; }
-    .preview-mint { background: #deece3; }
-    .preview-sand { background: #e9e2d7; }
-
-    .mini-browser {
-      width: 75%;
-      max-width: 365px;
-      padding: 17px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 24px 55px rgba(44, 35, 57, 0.12);
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover .mini-browser {
-      transform: scale(1.035);
-    }
-
-    .mini-line {
-      width: 45%;
-      height: 6px;
-      margin-bottom: 8px;
-      border-radius: 5px;
-      background: #e9e5ec;
-    }
-
-    .mini-line.short { width: 25%; }
-    .mini-line.long { width: 70%; }
-
-    .mini-art {
-      display: grid;
-      min-height: 135px;
-      margin-top: 15px;
-      place-items: center;
-      border-radius: 9px;
-      background: linear-gradient(140deg, #e7def5, #f5e8de);
-      color: var(--lavender-dark);
-      font-family: var(--heading-font);
-      font-size: 33px;
-      font-weight: 800;
-      letter-spacing: -0.08em;
-    }
-
-    .preview-peach .mini-art {
-      background: linear-gradient(140deg, #f4d8c9, #e6b8ae);
-      color: #79504b;
-    }
-
-    .preview-mint .mini-art {
-      background: linear-gradient(140deg, #d8eade, #b4cdb9);
-      color: #365c46;
-    }
-
-    .preview-sand .mini-art {
-      background: linear-gradient(140deg, #e9e3d8, #cbc1b1);
-      color: #5a5449;
-    }
-
-    .project-details {
       display: flex;
-      align-items: start;
+      min-height: 350px;
+      flex-direction: column;
       justify-content: space-between;
-      gap: 15px;
-      margin-top: 17px;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: 20px;
+      background: #ece9e5;
     }
 
-    .project-details h3 {
-      margin: 0;
-      font-family: var(--heading-font);
-      font-size: 19px;
-      letter-spacing: -0.04em;
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(41, 38, 51, 0.12);
     }
 
-    .project-details p {
-      margin: 5px 0 0;
-      color: var(--muted);
-      font-size: 13px;
+    .browser-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #aaa4a4;
+    }
+
+    .browser-label {
+      margin-left: 8px;
+      color: #6e6868;
+      font-size: 0.72rem;
+    }
+
+    .store-preview {
+      display: grid;
+      flex: 1;
+      align-content: center;
+      justify-items: center;
+      gap: 12px;
+      padding: 30px 12px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 20% 20%, #ffffff 0, transparent 48%),
+        linear-gradient(135deg, #f5f3ef, #d8d5d1);
+    }
+
+    .store-preview .store-name {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #292929;
+    }
+
+    .store-preview p {
+      color: #56514e;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 12px 0;
     }
 
     .project-tag {
-      flex-shrink: 0;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: var(--pill);
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .projects-caption {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* =========================================
-       10. CONTACT SECTION
-    ========================================= */
-    .contact-section {
-      padding-block: 30px 100px;
-    }
-
-    .contact-panel {
-      display: grid;
-      overflow: hidden;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #eee7f8, #f5e7df 55%, #e2eee5);
-      grid-template-columns: 0.9fr 1.1fr;
-    }
-
-    .contact-copy {
-      padding: clamp(28px, 5vw, 55px);
-    }
-
-    .contact-copy h2 {
-      margin: 18px 0;
-      font-family: var(--heading-font);
-      font-size: clamp(37px, 4.5vw, 53px);
-      font-weight: 800;
-      letter-spacing: -0.075em;
-      line-height: 1.08;
-    }
-
-    .contact-copy > p {
-      color: #706a72;
-      font-size: 15px;
-    }
-
-    .contact-info {
-      display: grid;
-      gap: 16px;
-      margin-top: 30px;
-    }
-
-    .contact-info a,
-    .contact-location {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .contact-symbol {
-      display: grid;
-      width: 39px;
-      height: 39px;
-      flex-shrink: 0;
-      place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    .contact-info a:hover {
-      color: var(--lavender-dark);
-    }
-
-    .contact-form {
-      display: grid;
-      align-content: center;
-      gap: 17px;
-      padding: clamp(24px, 4vw, 45px);
-      background: rgba(255, 255, 255, 0.76);
-    }
-
-    .form-row {
-      display: grid;
-      gap: 15px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .field {
-      display: grid;
-      min-width: 0;
-      gap: 7px;
-    }
-
-    .field label {
-      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #426954;
+      font-size: 0.75rem;
       font-weight: 700;
     }
 
-    .field input,
-    .field textarea {
-      width: 100%;
-      min-width: 0;
-      padding: 13px 14px;
-      border: 1px solid #e5e0e7;
-      border-radius: 11px;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--text);
-      font-size: 14px;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    .project-info h3 {
+      margin-bottom: 15px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
     }
 
-    .field input {
-      min-height: 49px;
+    .project-info > p {
+      margin-bottom: 22px;
     }
 
-    .field textarea {
-      min-height: 120px;
-      resize: vertical;
+    .project-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+      list-style: none;
     }
 
-    .field input:focus,
-    .field textarea:focus {
-      border-color: var(--lavender-dark);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(125, 101, 173, 0.1);
-    }
-
-    .field input::placeholder,
-    .field textarea::placeholder {
-      color: #aaa4ad;
-    }
-
-    .contact-form .button {
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .form-caption {
-      margin: 0;
+    .project-features li {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
       color: var(--muted);
-      font-size: 11px;
-      text-align: center;
+      font-size: 0.76rem;
     }
 
-    /* =========================================
-       11. FOOTER
-    ========================================= */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding-block: 25px;
+    .project-note {
+      margin-top: 14px;
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       8. CONTACT SECTION
+    ========================== */
+
+    .contact-panel {
+      padding: clamp(30px, 6vw, 70px);
+      border-radius: 32px;
+      background: var(--lavender);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-copy p {
+      max-width: 480px;
+      margin-top: 18px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      padding: 15px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.75);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateX(4px);
+      background: #fff;
+    }
+
+    .contact-icon {
+      display: grid;
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--pink);
+      font-size: 1.1rem;
+    }
+
+    .contact-link-text {
+      min-width: 0;
+    }
+
+    .contact-link-text strong {
+      display: block;
+      font-size: 0.86rem;
+    }
+
+    .contact-link-text span {
+      display: block;
+      overflow-wrap: anywhere;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* =========================
+       9. FOOTER
+    ========================== */
+
+    .site-footer {
+      padding: 32px 0;
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 16px;
     }
 
-    .copyright {
-      color: var(--muted);
-      font-size: 12px;
+    .footer-inner p {
+      font-size: 0.82rem;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      color: var(--muted);
-      font-size: 12px;
     }
 
     .footer-links a {
-      transition: color 0.2s ease;
+      color: var(--muted);
+      font-size: 0.84rem;
     }
 
     .footer-links a:hover {
-      color: var(--lavender-dark);
+      color: var(--accent);
     }
 
-    /* =========================================
-       12. TABLET RESPONSIVENESS
-    ========================================= */
+    /* =========================
+       10. ANIMATIONS
+    ========================== */
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* =========================
+       11. RESPONSIVE DESIGN
+    ========================== */
+
     @media (max-width: 900px) {
-      .section {
-        padding-block: 75px;
+      .nav-links {
+        gap: 15px;
       }
 
-      .hero {
-        padding-block: 70px;
+      .nav-links a {
+        font-size: 0.82rem;
       }
 
       .hero-grid {
         gap: 30px;
-        grid-template-columns: 1fr 0.9fr;
       }
 
-      .art-canvas {
-        min-height: 300px;
-        padding: 20px;
-        grid-template-columns: 1fr;
-      }
-
-      .canvas-visual {
-        display: none;
+      .hero-visual {
+        min-height: 380px;
       }
 
       .about-grid {
         gap: 35px;
-      }
-
-      .about-visual {
-        min-height: 350px;
       }
 
       .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .contact-panel {
-        grid-template-columns: 1fr;
+      .project-card {
+        gap: 25px;
       }
 
-      .contact-copy {
-        padding-bottom: 25px;
-      }
-
-      .contact-form {
-        padding-top: 30px;
-      }
-
-      .contact-section {
-        padding-bottom: 75px;
+      .contact-grid {
+        gap: 28px;
       }
     }
 
-    /* =========================================
-       13. MOBILE RESPONSIVENESS
-    ========================================= */
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      html {
+        scroll-padding-top: 110px;
+      }
+
       .container {
-        width: calc(100% - 36px);
+        width: min(100% - 32px, var(--max-width));
       }
 
       .section {
-        padding-block: 62px;
+        padding: 68px 0;
       }
 
       .navigation {
-        min-height: 68px;
-      }
-
-      .logo {
-        font-size: 15px;
+        min-height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        gap: 13px;
       }
 
       .nav-links {
-        gap: 12px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
       }
 
-      .nav-links > a:not(.button) {
-        display: none;
+      .nav-links a {
+        font-size: 0.8rem;
       }
 
-      .nav-button {
-        min-height: 40px;
-        padding: 9px 14px;
-        font-size: 12px;
+      .nav-contact {
+        padding: 5px 10px;
       }
 
       .hero {
-        padding-block: 55px 60px;
+        padding: 55px 0 65px;
       }
 
-      .hero-grid {
-        gap: 35px;
+      .hero-grid,
+      .about-grid,
+      .project-card,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: clamp(43px, 12.5vw, 66px);
+      .hero-copy h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
       }
 
-      .hero-text {
-        font-size: 15px;
+      .hero-visual {
+        min-height: 390px;
       }
 
-      .hero-art {
-        width: 100%;
-        max-width: 440px;
-        margin-inline: auto;
-        padding: 8px 10px 20px 8px;
+      .photo-frame {
+        width: min(290px, 75%);
       }
 
-      .art-canvas {
-        min-height: 285px;
-        grid-template-columns: 1fr 0.75fr;
-      }
-
-      .canvas-visual {
-        display: block;
-        min-height: 180px;
-      }
-
-      .visual-circle {
-        width: 110px;
-        height: 110px;
-      }
-
-      .visual-shape {
-        width: 75px;
-        height: 100px;
-      }
-
-      .floating-card {
-        right: -2px;
-        bottom: 22px;
-      }
-
-      .skills-inner {
-        align-items: flex-start;
-        flex-direction: column;
+      .floating-note {
+        right: 0;
+        bottom: 25px;
       }
 
       .skills-list {
-        gap: 8px;
+        gap: 12px 20px;
       }
 
-      .about-grid {
+      .about-photo-wrap {
+        max-width: 360px;
+        margin-inline: auto;
+      }
+
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-visual {
-        min-height: 320px;
-      }
-
-      .section-heading-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 30px;
-      }
-
-      .services-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        min-height: auto;
+      .project-card {
+        padding: 16px;
       }
 
       .project-preview {
         min-height: 270px;
       }
 
-      .project-details {
-        flex-wrap: wrap;
+      .project-info {
+        padding: 12px 5px 5px;
       }
 
       .contact-panel {
-        border-radius: 22px;
-      }
-
-      .contact-copy {
-        padding: 30px 23px 20px;
-      }
-
-      .contact-form {
-        padding: 23px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-section {
-        padding-bottom: 60px;
+        padding: 28px 20px;
       }
 
       .footer-inner {
-        align-items: flex-start;
         flex-direction: column;
-      }
-
-      .footer-links {
-        gap: 15px;
+        align-items: flex-start;
       }
     }
 
-    /* =========================================
-       14. ACCESSIBILITY: REDUCED MOTION
-    ========================================= */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
         scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -1325,582 +871,385 @@
 
 <body>
 
-  <!-- HEADER: Logo and navigation -->
-  <header class="header">
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+  <header class="site-header">
     <nav class="navigation container" aria-label="Main navigation">
+      <a class="brand" href="#home">Hranush<span>.</span></a>
 
-      <a href="#home" class="logo" aria-label="Hranush Petrosyan home">
-        <span class="logo-icon">✳</span>
-        <span>Hranush Petrosyan<span class="highlight">.</span></span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Portfolio</a>
-
-        <a href="#contact" class="button button-primary nav-button">
-          Let's talk <span class="arrow">↗</span>
-        </a>
-      </div>
-
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-contact">Let's talk ↗</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
 
-    <!-- HERO: Introduction and main calls to action -->
+    <!-- =========================
+         HERO
+    ========================== -->
     <section class="hero" id="home">
-      <div class="container hero-grid">
+      <div class="hero-grid container">
 
-        <div class="hero-content">
-
-          <div class="status">
-            <span class="status-dot"></span>
-            Open to freelance opportunities
-          </div>
+        <div class="hero-copy">
+          <span class="eyebrow">Web Design · Front-End</span>
 
           <h1>
-            Designing digital
-            <span>experiences</span>
-            that matter.
+            Hello, I'm<br>
+            Hranush <span>Petrosyan.</span>
           </h1>
 
-          <p class="hero-text">
-            Hi, I'm Hranush — a creative professional exploring the
-            intersection of frontend development, UI/UX design, and
-            beautiful digital experiences. I turn ideas into websites
-            that feel thoughtful, modern, and effortless to use.
+          <p>
+            Web Designer &amp; Front-End Developer creating thoughtful,
+            responsive and visually engaging digital experiences.
           </p>
 
           <div class="hero-buttons">
-            <a href="#projects" class="button button-primary">
-              Explore my work <span class="arrow">↗</span>
-            </a>
-
-            <a href="#about" class="button button-outline">
-              Get to know me
-            </a>
+            <a class="button" href="#projects">Explore my work ↗</a>
+            <a class="button button-light"
+              href="mailto:hrpetrosyan19@gmail.com">Contact me</a>
           </div>
 
-          <p class="hero-note">
-            Based in Armenia · Open to remote collaborations
-          </p>
-
+          <div class="hero-location">
+            <span aria-hidden="true">📍</span>
+            <span>Based in Armenia · Available for remote work</span>
+          </div>
         </div>
 
-        <!-- Decorative portfolio preview built entirely with CSS -->
-        <div class="hero-art" aria-label="Abstract creative portfolio illustration">
+        <div class="hero-visual">
+          <div class="hero-blob" aria-hidden="true"></div>
 
-          <div class="art-ring" aria-hidden="true"></div>
+          <!--
+            PHOTO:
+            Save your portrait as hranush-photo.jpg in the same folder
+            as this HTML file. Keep this image element as it is.
+          -->
+          <div class="photo-frame">
+            <img
+              src="hranush-photo.jpg"
+              alt="Portrait of Hranush Petrosyan"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
 
-          <div class="art-window">
-
-            <div class="window-bar" aria-hidden="true">
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-              <div class="window-address">creative-space.design</div>
-            </div>
-
-            <div class="art-canvas">
-
-              <div>
-                <span class="canvas-label">A creative perspective</span>
-
-                <h2 class="canvas-title">
-                  Design with<br>
-                  intention.
-                </h2>
-
-                <p class="canvas-description">
-                  Thoughtful layouts. Meaningful details.
-                  Experiences made for people.
-                </p>
-              </div>
-
-              <div class="canvas-visual" aria-hidden="true">
-                <span class="visual-star">✳</span>
-                <div class="visual-circle"></div>
-                <div class="visual-shape"></div>
-              </div>
-
+            <div class="photo-placeholder" style="display:none">
+              <strong>Your portrait goes here</strong>
+              <span>Add your photo as hranush-photo.jpg</span>
             </div>
           </div>
 
-          <div class="floating-card">
-            Design + Development
-            <span>Creative ideas, carefully built</span>
+          <div class="floating-note">
+            <strong>Design with purpose ✦</strong>
+            <span>Creative thinking, clean code.</span>
           </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- SKILLS: Technologies and areas of expertise -->
-    <section class="skills-strip" aria-label="Skills and technologies">
-      <div class="container skills-inner">
-
-        <span class="skills-label">My creative toolkit</span>
-
-        <div class="skills-list">
-          <span class="skill">HTML5</span>
-          <span class="skill">CSS3</span>
-          <span class="skill">UI/UX Design</span>
-          <span class="skill">Shopify</span>
-          <span class="skill">Responsive Design</span>
-          <span class="skill">Landing Pages</span>
-        </div>
-
+    <!-- =========================
+         SKILLS
+    ========================== -->
+    <section class="skills-strip" aria-label="Skills">
+      <div class="container">
+        <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Responsive Design</li>
+          <li>Shopify</li>
+          <li>Landing Pages</li>
+          <li>UI Design</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ABOUT: Personal introduction and working philosophy -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
     <section class="section" id="about">
-      <div class="container about-grid">
+      <div class="about-grid container">
 
-        <div class="about-text">
+        <div class="about-photo-wrap">
+          <!-- Uses the same portrait as the hero section -->
+          <div class="about-photo">
+            <img
+              src="hranush-photo.jpg"
+              alt="Hranush Petrosyan, web designer and developer"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
 
+            <div class="photo-placeholder" style="display:none">
+              <strong>About Hranush</strong>
+              <span>Your portrait will appear here.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy">
           <span class="eyebrow">A little about me</span>
 
-          <h2 class="section-title">
-            Creative thinking.
-            <span class="highlight">Practical solutions.</span>
-          </h2>
+          <h2>Turning ideas into digital experiences.</h2>
 
           <p>
-            I believe a great website should do more than look good.
-            It should communicate clearly, guide visitors naturally,
-            and make every interaction feel intuitive.
+            I'm Hranush Petrosyan, a Web Designer &amp; Front-End Developer
+            based in Armenia. I enjoy creating clean, user-friendly
+            websites that combine thoughtful design with responsive
+            layouts.
           </p>
 
           <p>
-            My interests combine visual design, frontend development,
-            and e-commerce experiences. I enjoy exploring how thoughtful
-            typography, balanced spacing, and well-structured layouts
-            can turn a simple idea into something memorable.
+            My portfolio includes Shopify storefront work and web page
+            design. I focus on clear visual hierarchy, usability,
+            and details that make a website feel polished.
           </p>
 
-          <p>
-            My goal is to keep learning, refine my craft, and create
-            digital experiences that balance <strong>beauty,
-            usability, and purpose.</strong>
-          </p>
-
-          <div class="about-values">
-
-            <div class="value-item">
-              <h3>Thoughtful Design</h3>
-              <p>Clear visual hierarchy and consistency.</p>
+          <div class="about-details">
+            <div class="detail">
+              <strong>Location</strong>
+              <span>Armenia</span>
             </div>
 
-            <div class="value-item">
-              <h3>User First</h3>
-              <p>Simple and intuitive experiences.</p>
+            <div class="detail">
+              <strong>Specialization</strong>
+              <span>Web Design &amp; Front-End</span>
             </div>
 
-            <div class="value-item">
-              <h3>Clean Code</h3>
-              <p>Structured and maintainable layouts.</p>
+            <div class="detail">
+              <strong>Email</strong>
+              <span>hrpetrosyan19@gmail.com</span>
             </div>
 
-            <div class="value-item">
-              <h3>Always Learning</h3>
-              <p>Curiosity, growth, and experimentation.</p>
+            <div class="detail">
+              <strong>Work preference</strong>
+              <span>Remote projects</span>
             </div>
-
-          </div>
-        </div>
-
-        <!-- Decorative design-system illustration -->
-        <div class="about-visual" aria-label="Pastel design system illustration">
-
-          <div class="design-note">
-
-            <div class="design-note-top">
-              <span>VISUAL DIRECTION</span>
-              <span>01 / 04</span>
-            </div>
-
-            <h3>Less noise.<br>More meaning.</h3>
-
-            <p>
-              A considered visual language inspired by simplicity,
-              clarity, and creativity.
-            </p>
-
-            <div class="palette" aria-label="Portfolio color palette">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SERVICES: Skills and benefits offered -->
-    <section class="section services" id="services">
+    <!-- =========================
+         SERVICES
+    ========================== -->
+    <section class="section services-section" id="services">
       <div class="container">
 
-        <div class="section-heading-row">
-          <div>
-            <span class="eyebrow">What I do</span>
-            <h2 class="section-title">
-              Turning ideas into digital experiences.
-            </h2>
-          </div>
-
-          <p class="section-description">
-            A combination of design thinking and frontend skills
-            to help brands create a more thoughtful online presence.
+        <div class="section-heading">
+          <span class="eyebrow">What I do</span>
+          <h2>Design that works beautifully.</h2>
+          <p>
+            From the first visual concept to a responsive page,
+            I aim to make every digital experience clear and engaging.
           </p>
         </div>
 
         <div class="services-grid">
 
           <article class="service-card">
-            <div class="service-icon icon-lavender" aria-hidden="true">✳</div>
-
-            <h3>UI/UX Design</h3>
-
+            <span class="service-number">01</span>
+            <h3>Web Design</h3>
             <p>
-              Visually consistent interfaces, intuitive navigation,
-              and user-focused layouts designed around clear goals.
+              Modern layouts, harmonious colors, typography,
+              and intuitive page structure.
             </p>
-
-            <span class="service-index">01 — DESIGN</span>
           </article>
 
           <article class="service-card">
-            <div class="service-icon icon-peach" aria-hidden="true">⌘</div>
-
-            <h3>Frontend Development</h3>
-
+            <span class="service-number">02</span>
+            <h3>HTML &amp; CSS</h3>
             <p>
-              Semantic HTML and modern CSS translated into responsive,
-              polished, and accessible web experiences.
+              Clean, responsive page structures designed to work
+              across desktop, tablet, and mobile screens.
             </p>
-
-            <span class="service-index">02 — DEVELOPMENT</span>
           </article>
 
           <article class="service-card">
-            <div class="service-icon icon-mint" aria-hidden="true">↗</div>
-
-            <h3>Landing Pages</h3>
-
+            <span class="service-number">03</span>
+            <h3>Shopify Pages</h3>
             <p>
-              Focused landing pages with compelling headlines,
-              clear messaging, and strategically placed calls to action.
+              Storefront styling, custom page sections,
+              and e-commerce layouts tailored to a brand.
             </p>
-
-            <span class="service-index">03 — WEB DESIGN</span>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon icon-mint" aria-hidden="true">▦</div>
-
-            <h3>Shopify Page Design</h3>
-
-            <p>
-              Custom storefront sections, product pages, and brand-aligned
-              layouts for a more cohesive e-commerce experience.
-            </p>
-
-            <span class="service-index">04 — E-COMMERCE</span>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon icon-lavender" aria-hidden="true">◉</div>
-
-            <h3>Responsive Design</h3>
-
-            <p>
-              Carefully adapted layouts, typography, and controls
-              for mobile, tablet, and desktop screens.
-            </p>
-
-            <span class="service-index">05 — RESPONSIVENESS</span>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon icon-peach" aria-hidden="true">⌁</div>
-
-            <h3>Visual Refinement</h3>
-
-            <p>
-              Color palettes, spacing, typography, and subtle
-              interactions that bring a design together.
-            </p>
-
-            <span class="service-index">06 — DETAILS</span>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO: Example project previews -->
+    <!-- =========================
+         FEATURED PROJECTS
+    ========================== -->
     <section class="section" id="projects">
       <div class="container">
 
-        <div class="section-heading-row">
-          <div>
-            <span class="eyebrow">Selected work</span>
-            <h2 class="section-title">A collection of ideas.</h2>
-          </div>
-
-          <p class="section-description">
-            Exploring modern web layouts, visual identities,
-            and digital experiences through design and code.
+        <div class="section-heading">
+          <span class="eyebrow">Selected work</span>
+          <h2>A project I'm proud to share.</h2>
+          <p>
+            Explore my Shopify storefront project and see the
+            live store experience.
           </p>
         </div>
 
-        <div class="projects-grid">
+        <article class="project-card">
 
-          <!-- Project 1 -->
-          <article class="project-card">
-
-            <div class="project-preview preview-lavender">
-              <div class="mini-browser" aria-hidden="true">
-                <div class="mini-line short"></div>
-                <div class="mini-line long"></div>
-                <div class="mini-art">Studio.</div>
-                <div class="mini-line"></div>
-                <div class="mini-line short"></div>
-              </div>
+          <!--
+            CSS storefront preview.
+            Replace this preview with a real screenshot of your store
+            whenever you have one available.
+          -->
+          <div class="project-preview">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-label">KOFRA · Shopify Store</span>
             </div>
 
-            <div class="project-details">
-              <div>
-                <h3>Creative Studio Website</h3>
-                <p>A minimal online presence for a creative brand.</p>
-              </div>
-              <span class="project-tag">Web Design</span>
+            <div class="store-preview">
+              <div class="store-name">KOFRA</div>
+              <p>Designed for the journey</p>
             </div>
+          </div>
 
-          </article>
+          <div class="project-info">
+            <span class="project-tag">Featured Shopify Project</span>
 
-          <!-- Project 2 -->
-          <article class="project-card">
+            <h3>KOFRA — E-commerce Store</h3>
 
-            <div class="project-preview preview-peach">
-              <div class="mini-browser" aria-hidden="true">
-                <div class="mini-line short"></div>
-                <div class="mini-line long"></div>
-                <div class="mini-art">Everyday.</div>
-                <div class="mini-line"></div>
-                <div class="mini-line short"></div>
-              </div>
-            </div>
+            <p>
+              A Shopify storefront project for a luggage brand,
+              presented as part of my web design and front-end portfolio.
+              Visit the live store to explore the current design.
+            </p>
 
-            <div class="project-details">
-              <div>
-                <h3>Product Landing Page</h3>
-                <p>A product-focused layout with clear messaging.</p>
-              </div>
-              <span class="project-tag">Landing Page</span>
-            </div>
+            <ul class="project-features">
+              <li>Shopify</li>
+              <li>E-commerce</li>
+              <li>Web Design</li>
+              <li>Responsive Layout</li>
+            </ul>
 
-          </article>
+            <a
+              class="button"
+              href="https://hranush-petrosyan-d6ijjswg.myshopify.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Visit live store ↗
+            </a>
 
-          <!-- Project 3 -->
-          <article class="project-card">
+            <p class="project-note">
+              Note: If the store is password-protected, visitors may
+              need the storefront password to view it.
+            </p>
+          </div>
 
-            <div class="project-preview preview-mint">
-              <div class="mini-browser" aria-hidden="true">
-                <div class="mini-line short"></div>
-                <div class="mini-line long"></div>
-                <div class="mini-art">Grow well.</div>
-                <div class="mini-line"></div>
-                <div class="mini-line short"></div>
-              </div>
-            </div>
-
-            <div class="project-details">
-              <div>
-                <h3>Wellness Brand Concept</h3>
-                <p>A calm visual direction and approachable interface.</p>
-              </div>
-              <span class="project-tag">UI/UX</span>
-            </div>
-
-          </article>
-
-          <!-- Project 4 -->
-          <article class="project-card">
-
-            <div class="project-preview preview-sand">
-              <div class="mini-browser" aria-hidden="true">
-                <div class="mini-line short"></div>
-                <div class="mini-line long"></div>
-                <div class="mini-art">Objects.</div>
-                <div class="mini-line"></div>
-                <div class="mini-line short"></div>
-              </div>
-            </div>
-
-            <div class="project-details">
-              <div>
-                <h3>E-commerce Experience</h3>
-                <p>A refined storefront concept for a modern brand.</p>
-              </div>
-              <span class="project-tag">Shopify</span>
-            </div>
-
-          </article>
-
-        </div>
-
-        <p class="projects-caption">
-          These previews are illustrative concepts. Replace them with
-          your real projects, screenshots, and live project links.
-        </p>
+        </article>
 
       </div>
     </section>
 
-    <!-- CONTACT: Contact information and inquiry form -->
-    <section class="contact-section" id="contact">
+    <!-- =========================
+         CONTACT
+    ========================== -->
+    <section class="section" id="contact">
       <div class="container">
 
         <div class="contact-panel">
+          <div class="contact-grid">
 
-          <div class="contact-copy">
+            <div class="contact-copy">
+              <span class="eyebrow">Get in touch</span>
 
-            <span class="eyebrow">Let's connect</span>
+              <h2>Have a project in mind?</h2>
 
-            <h2>
-              Have an idea?
-              <span class="highlight">Let's build it.</span>
-            </h2>
+              <p>
+                I'd love to hear about your ideas, discuss a website
+                project, or connect about freelance opportunities.
+                Choose the easiest way to reach me.
+              </p>
 
-            <p>
-              Whether you need a new landing page, a thoughtful website
-              design, or a Shopify storefront, I'd love to hear about
-              your project and explore the possibilities.
-            </p>
+              <div style="margin-top: 26px;">
+                <a class="button"
+                  href="mailto:hrpetrosyan19@gmail.com">
+                  Send me an email ↗
+                </a>
+              </div>
+            </div>
 
-            <div class="contact-info">
+            <div class="contact-links">
 
-              <a href="mailto:hello@example.com">
-                <span class="contact-symbol" aria-hidden="true">✉</span>
-                hello@example.com
+              <a class="contact-link"
+                href="mailto:hrpetrosyan19@gmail.com">
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <span class="contact-link-text">
+                  <strong>Email</strong>
+                  <span>hrpetrosyan19@gmail.com</span>
+                </span>
               </a>
 
-              <div class="contact-location">
-                <span class="contact-symbol" aria-hidden="true">⌖</span>
-                Armenia · Remote worldwide
-              </div>
+              <a class="contact-link"
+                href="tel:+37477198985">
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <span class="contact-link-text">
+                  <strong>Phone</strong>
+                  <span>+374 77 198985</span>
+                </span>
+              </a>
+
+              <a class="contact-link"
+                href="https://wa.me/37477198985"
+                target="_blank"
+                rel="noopener noreferrer">
+                <span class="contact-icon" aria-hidden="true">◉</span>
+                <span class="contact-link-text">
+                  <strong>WhatsApp</strong>
+                  <span>Message me directly</span>
+                </span>
+              </a>
+
+              <a class="contact-link"
+                href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319"
+                target="_blank"
+                rel="noopener noreferrer">
+                <span class="contact-icon" aria-hidden="true">in</span>
+                <span class="contact-link-text">
+                  <strong>LinkedIn</strong>
+                  <span>Connect with me professionally</span>
+                </span>
+              </a>
 
             </div>
-
           </div>
-
-          <!--
-            CONTACT FORM:
-            This is a frontend-only form.
-            Connect it to a form service or backend to receive submissions.
-          -->
-          <form class="contact-form" action="#" method="post">
-
-            <div class="form-row">
-
-              <div class="field">
-                <label for="name">Your name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Jane Smith"
-                  autocomplete="name"
-                  required
-                >
-              </div>
-
-              <div class="field">
-                <label for="email">Email address</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="jane@example.com"
-                  autocomplete="email"
-                  required
-                >
-              </div>
-
-            </div>
-
-            <div class="field">
-              <label for="project">What are you looking for?</label>
-              <input
-                id="project"
-                name="project"
-                type="text"
-                placeholder="Website, landing page, Shopify..."
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="message">Tell me about your project</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Share a little about your idea..."
-                required
-              ></textarea>
-            </div>
-
-            <button class="button button-primary" type="submit">
-              Send a message <span class="arrow">↗</span>
-            </button>
-
-            <p class="form-caption">
-              Every great project starts with a conversation.
-            </p>
-
-          </form>
-
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER: Copyright and social links -->
-  <footer class="footer">
-    <div class="container footer-inner">
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
 
-      <a href="#home" class="logo">
-        <span class="logo-icon">✳</span>
-        <span>Hranush Petrosyan<span class="highlight">.</span></span>
-      </a>
+      <a class="brand" href="#home">Hranush<span>.</span></a>
 
-      <p class="copyright">
-        © 2026 Hranush Petrosyan. Made with care.
+      <p>
+        © 2026 Hranush Petrosyan. All rights reserved.
       </p>
 
-      <nav class="footer-links" aria-label="Social links">
-        <!-- Replace these URLs with your actual profiles -->
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-          LinkedIn ↗
-        </a>
-
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-          GitHub ↗
-        </a>
-
-        <a href="mailto:hello@example.com">
-          Email ↗
-        </a>
-      </nav>
+      <div class="footer-links">
+        <a href="mailto:hrpetrosyan19@gmail.com">Email</a>
+        <a href="https://wa.me/37477198985"
+          target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/hranush-petrosyan-0a217b319"
+          target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#home">Back to top ↑</a>
+      </div>
 
     </div>
   </footer>
