@@ -1,1 +1,11 @@
-
+devkit/
+├── index.html        # landing page + tool cards
+├── tools/
+│   ├── json.html
+│   ├── color.html
+│   └── generator.html
+├── css/style.css
+├── js/
+│   ├── json.js
+│   └── generator.js
+└── README.md
