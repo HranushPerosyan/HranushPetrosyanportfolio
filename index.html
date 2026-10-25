@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#222321">
-  <title>Hranush Petrosyan | Web Designer & Web Developer</title>
+  <title>Hranush Petrosyan | Shopify Developer & Web Designer</title>
   <meta name="description" content="Portfolio of Hranush Petrosyan, specializing in web design, Shopify development, Liquid, JavaScript, Node.js and integrations.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -444,6 +444,155 @@
     .about-highlight span {
       color: #77736b;
       font-size: 11px;
+    }
+
+    /* PORTFOLIO INSIDE ABOUT */
+    .about-portfolio {
+      padding: 78px 0 0;
+      background: var(--ivory);
+      color: var(--charcoal);
+    }
+
+    .about-portfolio .section-label {
+      color: #8c663d;
+    }
+
+    .about-portfolio .section-label::before {
+      background: #8c663d;
+    }
+
+    .about-portfolio .section-title span {
+      color: #936d43;
+    }
+
+    .about-portfolio .section-description {
+      color: #69665f;
+    }
+
+    .about-portfolio .project-card {
+      margin-top: 34px;
+    }
+
+    /* ADDITIONAL SHOPIFY LANDING PAGE PROJECTS */
+    .landing-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .landing-project {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid rgba(34, 35, 33, 0.14);
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .landing-project-preview {
+      min-height: 210px;
+      padding: 16px;
+      background: #e8e0d2;
+    }
+
+    .landing-project-browser {
+      height: 100%;
+      min-height: 178px;
+      overflow: hidden;
+      border: 1px solid rgba(34, 35, 33, 0.13);
+      background: #f8f5ee;
+      box-shadow: 0 12px 28px rgba(34, 35, 33, 0.1);
+    }
+
+    .landing-project-browser-bar {
+      display: flex;
+      gap: 5px;
+      padding: 9px 11px;
+      border-bottom: 1px solid rgba(34, 35, 33, 0.1);
+    }
+
+    .landing-project-browser-bar span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #b6afa1;
+    }
+
+    .landing-project-screen {
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 14px;
+      text-align: center;
+    }
+
+    .landing-project-screen.black-friday {
+      color: #f7f3eb;
+      background: #292923;
+    }
+
+    .landing-project-screen.holiday-travel {
+      color: #292923;
+      background: linear-gradient(135deg, #e7dfd0, #f8f5ee);
+    }
+
+    .landing-project-screen small {
+      margin-bottom: 9px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .landing-project-screen strong {
+      font-family: var(--font-heading);
+      font-size: clamp(20px, 2.6vw, 30px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .landing-project-screen em {
+      margin-top: 9px;
+      font-size: 9px;
+      font-style: normal;
+      opacity: 0.8;
+    }
+
+    .landing-project-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px;
+    }
+
+    .landing-project-label {
+      margin-bottom: 10px;
+      color: #936d43;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .landing-project-info h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+    }
+
+    .landing-project-info p {
+      margin: 12px 0 20px;
+      color: #69665f;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .landing-project-info .button {
+      margin-top: auto;
     }
 
     /* SERVICES */
@@ -1020,6 +1169,14 @@
         grid-template-columns: 1fr;
       }
 
+      .landing-pages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-project-preview {
+        min-height: 195px;
+      }
+
       .project-preview {
         min-height: 390px;
         padding: 23px;
@@ -1168,33 +1325,34 @@
         <div class="hero-copy">
           <div class="hero-eyebrow">
             <span class="status-dot"></span>
-            Web Design & Development
+            Shopify Storefronts & Landing Pages
           </div>
 
           <h1>
-            Building digital
-            <span>experiences</span>
-            with purpose.
+            Shopify experiences
+            <span>built with purpose.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Hi, I'm Hranush Petrosyan.
+            Hi, I'm Hranush Petrosyan — Shopify Developer & Web Designer.
           </p>
 
           <p class="hero-description">
-            I'm a Web Designer & Web Developer creating thoughtful,
-            responsive websites and Shopify experiences. I combine
-            visual design, front-end development, and back-end
-            integrations to build digital solutions that look polished
-            and work smoothly.
+            I create Shopify landing pages and storefront experiences,
+            customize themes with Liquid, build custom sections, connect
+            useful integrations, and improve layouts for mobile and desktop.
+            I focus on clear structure, brand consistency, and smooth
+            customer journeys. I also work on front-end development,
+            web design, and JavaScript/Node.js solutions when a project
+            needs more than standard theme customization.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="button button-primary">
-              Explore My Work <span>↗</span>
+              Explore My Shopify Work <span>↗</span>
             </a>
             <a href="#contact" class="button button-outline">
-              Get in Touch
+              Discuss a Project
             </a>
           </div>
         </div>
@@ -1288,6 +1446,150 @@
         </div>
 
       </div>
+      <!-- PORTFOLIO FEATURED INSIDE ABOUT -->
+    <div class="about-portfolio projects" id="projects">
+      <div class="container">
+
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">
+          A project I'm <span>proud of.</span>
+        </h2>
+
+        <p class="section-description">
+          A look at my Shopify storefront and landing-page work, combining brand presentation,
+          responsive layouts, custom sections, and storefront customization.
+        </p>
+
+        <article class="project-card">
+
+          <div class="project-preview">
+            <div class="preview-browser">
+
+              <div class="preview-browser-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="preview-brand">
+                KOFRA
+                <small>SHOP / COLLECTION / ABOUT</small>
+              </div>
+
+              <div class="preview-hero">
+                <small>DESIGNED FOR THE JOURNEY</small>
+                <h3>Travel with intention.</h3>
+                <p>Thoughtful essentials for every destination.</p>
+              </div>
+
+              <div class="preview-products">
+                <div class="preview-product">
+                  <div class="mini-suitcase"></div>
+                </div>
+                <div class="preview-product">
+                  <div class="mini-suitcase dark"></div>
+                </div>
+                <div class="preview-product">
+                  <div class="mini-suitcase light"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <p class="project-preview-caption">
+              Shopify storefront concept
+            </p>
+          </div>
+
+          <div class="project-info">
+            <div class="project-label">Featured Project / 01</div>
+            <h3>KOFRA</h3>
+
+            <p>
+              A premium travel-luggage Shopify storefront and landing-page project built
+              around a minimal visual identity and a refined shopping experience.
+              The work brings together theme customization, custom Liquid sections,
+              responsive layouts, and careful brand presentation.
+            </p>
+
+            <div class="project-features">
+              <span>Shopify</span>
+              <span>Liquid</span>
+              <span>Responsive Design</span>
+              <span>Custom Sections</span>
+              <span>Storefront UX</span>
+            </div>
+
+            <a
+              class="button project-button"
+              href="https://hranush-petrosyan-d6ijjswg.myshopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit KOFRA Store <span>↗</span>
+            </a>
+          </div>
+
+        </article>
+
+        <div class="landing-pages-grid" aria-label="Additional Shopify landing page projects">
+
+          <article class="landing-project">
+            <div class="landing-project-preview">
+              <div class="landing-project-browser">
+                <div class="landing-project-browser-bar"><span></span><span></span><span></span></div>
+                <div class="landing-project-screen black-friday">
+                  <small>Limited-time offer</small>
+                  <strong>BLACK FRIDAY</strong>
+                  <em>Campaign landing page</em>
+                </div>
+              </div>
+            </div>
+            <div class="landing-project-info">
+              <div class="landing-project-label">Shopify Landing Page / 02</div>
+              <h3>Black Friday Campaign</h3>
+              <p>A dedicated promotional landing page for a seasonal campaign, presented as part of my Shopify landing-page and storefront work.</p>
+              <div class="project-features">
+                <span>Shopify</span>
+                <span>Campaign Page</span>
+                <span>Responsive Layout</span>
+              </div>
+              <a class="button project-button" href="https://hranush-petrosyan-d6ijjswg.myshopify.com/pages/black-friday" target="_blank" rel="noopener noreferrer">
+                View Landing Page <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="landing-project">
+            <div class="landing-project-preview">
+              <div class="landing-project-browser">
+                <div class="landing-project-browser-bar"><span></span><span></span><span></span></div>
+                <div class="landing-project-screen holiday-travel">
+                  <small>Travel essentials</small>
+                  <strong>HOLIDAY TRAVEL RESCUE</strong>
+                  <em>Travel-focused landing page</em>
+                </div>
+              </div>
+            </div>
+            <div class="landing-project-info">
+              <div class="landing-project-label">Shopify Landing Page / 03</div>
+              <h3>Holiday Travel Rescue</h3>
+              <p>A travel-themed Shopify landing page created for a seasonal travel-rescue concept, included in my landing-page portfolio.</p>
+              <div class="project-features">
+                <span>Shopify</span>
+                <span>Travel Campaign</span>
+                <span>Responsive Layout</span>
+              </div>
+              <a class="button project-button" href="https://hranush-petrosyan-d6ijjswg.myshopify.com/pages/holiday-travel-rescue" target="_blank" rel="noopener noreferrer">
+                View Landing Page <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
     </section>
 
     <!-- SERVICES SECTION -->
@@ -1303,77 +1605,94 @@
           </div>
 
           <p class="section-description">
-            Combining creative thinking and technical implementation
-            to build websites that are visually consistent, responsive,
-            and practical.
+            Shopify is my main focus: from landing pages and theme customization
+            to custom Liquid sections and integrations. I also provide broader
+            web design and development support when a project needs it.
           </p>
         </div>
 
         <div class="services-grid">
 
           <article class="service-card">
-            <span class="service-number">01 / DESIGN</span>
+            <span class="service-number">01 / SHOPIFY</span>
             <span class="service-arrow">↗</span>
-            <h3>Web Design</h3>
+            <h3>Shopify Landing Pages</h3>
             <p>
-              Clean, modern, and user-focused website layouts that
-              communicate your brand and guide visitors through
-              a clear digital experience.
+              Custom campaign, product, and brand landing pages with
+              clear messaging, responsive layouts, and purposeful
+              sections built around your business goals.
             </p>
           </article>
 
           <article class="service-card">
-            <span class="service-number">02 / FRONT-END</span>
+            <span class="service-number">02 / THEMES</span>
             <span class="service-arrow">↗</span>
-            <h3>Front-End Development</h3>
+            <h3>Shopify Theme Customization</h3>
             <p>
-              Responsive interfaces using HTML, CSS, and JavaScript,
-              with attention to layout, accessibility, and
-              cross-device usability.
+              Tailoring Shopify themes, templates, layouts, typography,
+              and storefront details to match your brand and customer
+              experience needs.
             </p>
           </article>
 
           <article class="service-card">
-            <span class="service-number">03 / BACK-END</span>
+            <span class="service-number">03 / LIQUID</span>
             <span class="service-arrow">↗</span>
-            <h3>Back-End Development</h3>
+            <h3>Custom Liquid Sections</h3>
             <p>
-              Server-side development with Node.js and JavaScript
-              to support application logic, data handling, and
-              integration workflows where required.
+              Building reusable Shopify sections and custom storefront
+              components with Liquid, HTML, CSS, and JavaScript.
             </p>
           </article>
 
           <article class="service-card">
-            <span class="service-number">04 / SHOPIFY</span>
-            <span class="service-arrow">↗</span>
-            <h3>Shopify Development</h3>
-            <p>
-              Shopify theme customization, Liquid templates,
-              custom sections, and storefront improvements
-              tailored to individual business needs.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-number">05 / INTEGRATIONS</span>
+            <span class="service-number">04 / INTEGRATIONS</span>
             <span class="service-arrow">↗</span>
             <h3>Shopify Integrations</h3>
             <p>
-              Connecting Shopify storefronts with relevant
-              applications and services to improve store
-              functionality and workflows.
+              Connecting Shopify with relevant apps and services to
+              extend store functionality and support practical workflows.
             </p>
           </article>
 
           <article class="service-card">
-            <span class="service-number">06 / LANDING PAGES</span>
+            <span class="service-number">05 / STOREFRONT</span>
             <span class="service-arrow">↗</span>
-            <h3>Landing Pages</h3>
+            <h3>Responsive Store Improvements</h3>
             <p>
-              Focused landing pages with clear messaging,
-              purposeful structure, and responsive layouts
-              designed around specific goals.
+              Improving mobile and desktop layouts, navigation, content
+              sections, and storefront usability for a more consistent
+              shopping experience.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06 / DESIGN</span>
+            <span class="service-arrow">↗</span>
+            <h3>Web Design</h3>
+            <p>
+              Clean, modern, user-focused visual layouts that communicate
+              your brand and help visitors understand what you offer.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">07 / FRONT-END</span>
+            <span class="service-arrow">↗</span>
+            <h3>Front-End Development</h3>
+            <p>
+              Responsive interfaces built with HTML, CSS, and JavaScript,
+              with attention to accessibility and cross-device usability.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">08 / BACK-END</span>
+            <span class="service-arrow">↗</span>
+            <h3>Back-End Development</h3>
+            <p>
+              JavaScript and Node.js support for server-side logic,
+              data handling, and integration workflows where required.
             </p>
           </article>
 
@@ -1441,96 +1760,6 @@
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECT: KOFRA -->
-    <section class="section projects" id="projects">
-      <div class="container">
-
-        <div class="section-label">Selected Work</div>
-        <h2 class="section-title">
-          A project I'm <span>proud of.</span>
-        </h2>
-
-        <p class="section-description">
-          A look at my work combining brand presentation,
-          storefront design, and Shopify customization.
-        </p>
-
-        <article class="project-card">
-
-          <div class="project-preview">
-            <div class="preview-browser">
-
-              <div class="preview-browser-bar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="preview-brand">
-                KOFRA
-                <small>SHOP / COLLECTION / ABOUT</small>
-              </div>
-
-              <div class="preview-hero">
-                <small>DESIGNED FOR THE JOURNEY</small>
-                <h3>Travel with intention.</h3>
-                <p>Thoughtful essentials for every destination.</p>
-              </div>
-
-              <div class="preview-products">
-                <div class="preview-product">
-                  <div class="mini-suitcase"></div>
-                </div>
-                <div class="preview-product">
-                  <div class="mini-suitcase dark"></div>
-                </div>
-                <div class="preview-product">
-                  <div class="mini-suitcase light"></div>
-                </div>
-              </div>
-
-            </div>
-
-            <p class="project-preview-caption">
-              Shopify storefront concept
-            </p>
-          </div>
-
-          <div class="project-info">
-            <div class="project-label">Featured Project / 01</div>
-            <h3>KOFRA</h3>
-
-            <p>
-              A premium travel-luggage storefront project built
-              around a minimal visual identity and a refined
-              shopping experience. The project brings together
-              Shopify customization, Liquid sections, responsive
-              layouts, and attention to the details that make a
-              storefront feel cohesive.
-            </p>
-
-            <div class="project-features">
-              <span>Shopify</span>
-              <span>Liquid</span>
-              <span>Responsive Design</span>
-              <span>Custom Sections</span>
-              <span>Storefront UX</span>
-            </div>
-
-            <a
-              class="button project-button"
-              href="https://hranush-petrosyan-d6ijjswg.myshopify.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit KOFRA Store <span>↗</span>
-            </a>
-          </div>
-
-        </article>
       </div>
     </section>
 
